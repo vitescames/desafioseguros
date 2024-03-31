@@ -1,0 +1,1444 @@
+2024-03-27 00:09:18,259 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-27 00:09:18,315 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 40248 (C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-27 00:09:18,331 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-27 00:09:19,435 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27 00:09:19,561 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 110 ms. Found 1 JPA repository interface.
+2024-03-27 00:09:20,695 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-27 00:09:20,706 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-27 00:09:20,710 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-27 00:09:20,710 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-27 00:09:20,806 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-27 00:09:20,806 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2418 ms
+2024-03-27 00:09:21,040 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-27 00:09:21,323 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:21f8146b-80e1-460e-884d-68ac36600a6d user=SA
+2024-03-27 00:09:21,323 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-27 00:09:21,385 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-27 00:09:21,508 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-27 00:09:21,574 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-27 00:09:22,015 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27 00:09:22,312 ERROR o.s.o.j.AbstractEntityManagerFactoryBean [main] Failed to initialize JPA EntityManagerFactory: Entity 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-03-27 00:09:22,312 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-03-27 00:09:22,312 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2024-03-27 00:09:22,312 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2024-03-27 00:09:22,312 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2024-03-27 00:09:22,328 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-27 00:09:22,344 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at br.com.itau.desafioseguros.configuration.RestApiApplication.main(RestApiApplication.java:13)
+Caused by: org.hibernate.AnnotationException: Entity 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279)
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215)
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160)
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:348)
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:237)
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:423)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:256)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:279)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:322)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+2024-03-27 00:10:50,721 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-27 00:10:50,777 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 6344 (C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-27 00:10:50,777 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-27 00:10:51,884 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27 00:10:51,990 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interface.
+2024-03-27 00:10:53,105 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-27 00:10:53,105 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-27 00:10:53,121 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-27 00:10:53,121 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-27 00:10:53,216 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-27 00:10:53,216 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2381 ms
+2024-03-27 00:10:53,434 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-27 00:10:53,717 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:6585a0e6-bdd5-465f-ae60-b18653fc05b0 user=SA
+2024-03-27 00:10:53,717 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-27 00:10:53,811 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-27 00:10:53,921 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-27 00:10:53,984 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-27 00:10:54,299 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27 00:10:54,815 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-27 00:10:54,815 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 00:10:55,096 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'insuranceProductController' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes\br\com\itau\desafioseguros\adapters\entrypoint\api\controller\InsuranceProductController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'addInsuranceProductHandler' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\application\target\classes\br\com\itau\desafioseguros\application\command\handlers\AddInsuranceProductHandler.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'addInsuranceProductRepositoryImpl' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\infrastructure\persistence\target\classes\br\com\itau\desafioseguros\adapters\infrastructure\persistence\AddInsuranceProductRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'insuranceProductRepository' defined in br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Not a managed type: class br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity
+2024-03-27 00:10:55,096 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 00:10:55,108 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2024-03-27 00:10:55,112 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2024-03-27 00:10:55,112 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2024-03-27 00:10:55,112 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-27 00:10:55,143 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'insuranceProductController' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes\br\com\itau\desafioseguros\adapters\entrypoint\api\controller\InsuranceProductController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'addInsuranceProductHandler' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\application\target\classes\br\com\itau\desafioseguros\application\command\handlers\AddInsuranceProductHandler.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'addInsuranceProductRepositoryImpl' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\infrastructure\persistence\target\classes\br\com\itau\desafioseguros\adapters\infrastructure\persistence\AddInsuranceProductRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'insuranceProductRepository' defined in br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Not a managed type: class br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at br.com.itau.desafioseguros.configuration.RestApiApplication.main(RestApiApplication.java:13)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addInsuranceProductHandler' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\application\target\classes\br\com\itau\desafioseguros\application\command\handlers\AddInsuranceProductHandler.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'addInsuranceProductRepositoryImpl' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\infrastructure\persistence\target\classes\br\com\itau\desafioseguros\adapters\infrastructure\persistence\AddInsuranceProductRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'insuranceProductRepository' defined in br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Not a managed type: class br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addInsuranceProductRepositoryImpl' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\infrastructure\persistence\target\classes\br\com\itau\desafioseguros\adapters\infrastructure\persistence\AddInsuranceProductRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'insuranceProductRepository' defined in br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Not a managed type: class br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'insuranceProductRepository' defined in br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Not a managed type: class br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+	... 47 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Not a managed type: class br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity
+	at org.hibernate.metamodel.model.domain.internal.JpaMetamodelImpl.managedType(JpaMetamodelImpl.java:193)
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:468)
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:98)
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:82)
+	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:69)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:246)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:211)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:194)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:1)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:317)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:279)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135)
+	at org.springframework.data.util.Lazy.get(Lazy.java:113)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:285)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 58 common frames omitted
+2024-03-27 00:11:27,401 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-27 00:11:27,453 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 43856 (C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-27 00:11:27,453 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-27 00:11:28,746 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27 00:11:28,856 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 0 JPA repository interfaces.
+2024-03-27 00:11:30,128 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-27 00:11:30,143 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-27 00:11:30,143 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-27 00:11:30,159 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-27 00:11:30,237 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-27 00:11:30,237 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2718 ms
+2024-03-27 00:11:30,484 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-27 00:11:30,893 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:f29d5dcd-de5d-4797-a618-3f454a1edbb6 user=SA
+2024-03-27 00:11:30,893 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-27 00:11:30,987 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-27 00:11:31,097 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-27 00:11:31,192 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-27 00:11:31,664 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27 00:11:32,380 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-27 00:11:32,385 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 00:11:32,432 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'insuranceProductController' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes\br\com\itau\desafioseguros\adapters\entrypoint\api\controller\InsuranceProductController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'addInsuranceProductHandler' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\application\target\classes\br\com\itau\desafioseguros\application\command\handlers\AddInsuranceProductHandler.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'addInsuranceProductRepositoryImpl' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\infrastructure\persistence\target\classes\br\com\itau\desafioseguros\adapters\infrastructure\persistence\AddInsuranceProductRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-03-27 00:11:32,432 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 00:11:32,432 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2024-03-27 00:11:32,432 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2024-03-27 00:11:32,447 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2024-03-27 00:11:32,463 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-27 00:11:32,494 ERROR o.s.b.d.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in br.com.itau.desafioseguros.adapters.infrastructure.persistence.AddInsuranceProductRepositoryImpl required a bean of type 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository' in your configuration.
+
+2024-03-27 00:12:40,744 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-27 00:12:40,794 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 30368 (C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-27 00:12:40,794 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-27 00:12:41,946 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27 00:12:42,002 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 41 ms. Found 0 JPA repository interfaces.
+2024-03-27 00:12:42,959 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-27 00:12:42,975 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-27 00:12:42,975 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-27 00:12:42,975 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-27 00:12:43,084 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-27 00:12:43,084 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2234 ms
+2024-03-27 00:12:43,310 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-27 00:12:43,609 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:76023da4-b71f-42d0-88ba-763315d3ad75 user=SA
+2024-03-27 00:12:43,624 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-27 00:12:43,687 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-27 00:12:43,797 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-27 00:12:43,876 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-27 00:12:44,253 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27 00:12:44,788 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-27 00:12:44,798 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 00:12:44,833 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'insuranceProductController' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes\br\com\itau\desafioseguros\adapters\entrypoint\api\controller\InsuranceProductController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'addInsuranceProductHandler' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\application\target\classes\br\com\itau\desafioseguros\application\command\handlers\AddInsuranceProductHandler.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'addInsuranceProductRepositoryImpl' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\infrastructure\persistence\target\classes\br\com\itau\desafioseguros\adapters\infrastructure\persistence\AddInsuranceProductRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-03-27 00:12:44,835 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 00:12:44,835 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2024-03-27 00:12:44,835 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2024-03-27 00:12:44,835 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2024-03-27 00:12:44,851 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-27 00:12:44,913 ERROR o.s.b.d.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in br.com.itau.desafioseguros.adapters.infrastructure.persistence.AddInsuranceProductRepositoryImpl required a bean of type 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository' in your configuration.
+
+2024-03-27 00:13:06,065 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-27 00:13:06,114 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 6180 (C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-27 00:13:06,114 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-27 00:13:07,040 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27 00:13:07,103 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 43 ms. Found 0 JPA repository interfaces.
+2024-03-27 00:13:08,092 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-27 00:13:08,123 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-27 00:13:08,123 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-27 00:13:08,123 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-27 00:13:08,201 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-27 00:13:08,201 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2042 ms
+2024-03-27 00:13:08,406 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-27 00:13:08,704 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ab4185e3-0d5e-4f16-8f1f-d5c4773e30dc user=SA
+2024-03-27 00:13:08,704 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-27 00:13:08,783 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-27 00:13:08,924 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-27 00:13:09,003 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-27 00:13:09,426 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27 00:13:09,991 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-27 00:13:10,006 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 00:13:10,131 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-27 00:13:10,728 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-27 00:13:10,760 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-27 00:13:10,779 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 5.357 seconds (process running for 6.016)
+2024-03-27 00:13:14,169 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-27 00:13:14,170 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-27 00:13:14,172 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 1 ms
+2024-03-27 00:13:14,341 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@40f08771]
+2024-03-27 00:13:14,436 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - null
+2024-03-27 00:13:34,884 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27 00:13:34,884 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-27 00:13:34,899 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-27 00:13:40,340 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-27 00:13:40,406 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 55912 (C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-27 00:13:40,406 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-27 00:13:42,175 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-27 00:13:42,203 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-27 00:13:42,207 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-27 00:13:42,207 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-27 00:13:42,332 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-27 00:13:42,332 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1847 ms
+2024-03-27 00:13:42,443 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'insuranceProductController' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\adapters\entrypoint\api\target\classes\br\com\itau\desafioseguros\adapters\entrypoint\api\controller\InsuranceProductController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'addInsuranceProductHandler' defined in file [C:\Users\vitho\Desktop\dev\desafioseguros\application\target\classes\br\com\itau\desafioseguros\application\command\handlers\AddInsuranceProductHandler.class]: Unsatisfied dependency expressed through constructor parameter 2: No qualifying bean of type 'br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-03-27 00:13:42,443 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2024-03-27 00:13:42,466 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-27 00:13:42,498 ERROR o.s.b.d.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 2 of constructor in br.com.itau.desafioseguros.application.command.handlers.AddInsuranceProductCommandHandler required a bean of type 'br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository' in your configuration.
+
+2024-03-31 00:22:40,301 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 00:22:40,364 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 49256 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 00:22:40,364 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 00:22:41,295 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 00:22:41,326 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
+2024-03-31 00:22:42,209 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 00:22:42,235 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:22:42,241 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 00:22:42,241 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 00:22:42,336 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 00:22:42,336 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1913 ms
+2024-03-31 00:22:42,538 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 00:22:42,890 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:26ef4e60-bc24-447d-a183-67976da3919e user=SA
+2024-03-31 00:22:42,890 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 00:22:42,969 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 00:22:43,161 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 00:22:43,222 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 00:22:43,747 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 00:22:44,457 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 00:22:44,462 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:22:49,571 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 00:22:50,210 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:22:50,274 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 00:22:50,290 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 10.543 seconds (process running for 12.843)
+2024-03-31 00:23:13,474 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 00:23:13,474 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 00:23:13,474 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 0 ms
+2024-03-31 00:23:44,522 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:23:44,522 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 00:23:44,522 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 00:25:09,319 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 00:25:09,370 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 13628 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 00:25:09,370 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 00:25:10,308 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 00:25:10,358 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 20 ms. Found 0 JPA repository interfaces.
+2024-03-31 00:25:11,305 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 00:25:11,305 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:25:11,305 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 00:25:11,321 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 00:25:11,415 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 00:25:11,415 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1987 ms
+2024-03-31 00:25:11,631 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 00:25:11,968 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:c983c1bc-9378-46da-8eed-d8c721f8b20c user=SA
+2024-03-31 00:25:11,968 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 00:25:12,049 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 00:25:12,174 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 00:25:12,237 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 00:25:12,757 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 00:25:13,437 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 00:25:13,447 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:25:13,551 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 00:25:14,146 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:25:14,178 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 00:25:14,193 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 5.603 seconds (process running for 6.281)
+2024-03-31 00:25:18,831 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 00:25:18,831 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 00:25:18,840 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 00:25:52,142 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:25:52,159 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 00:25:52,159 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 00:26:10,659 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 00:26:10,722 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 31292 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 00:26:10,722 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 00:26:11,906 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 00:26:11,960 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 33 ms. Found 0 JPA repository interfaces.
+2024-03-31 00:26:13,074 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 00:26:13,090 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:26:13,090 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 00:26:13,090 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 00:26:13,184 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 00:26:13,184 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2406 ms
+2024-03-31 00:26:13,444 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 00:26:13,784 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:d2eceec0-9d44-4c22-8ecf-66029da2ef94 user=SA
+2024-03-31 00:26:13,784 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 00:26:13,871 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 00:26:13,990 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 00:26:14,069 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 00:26:14,544 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 00:26:15,168 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 00:26:15,168 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:26:15,310 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 00:26:15,893 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:26:15,924 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 00:26:15,940 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 6.119 seconds (process running for 6.792)
+2024-03-31 00:26:24,358 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 00:26:24,358 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 00:26:24,361 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 3 ms
+2024-03-31 00:26:24,641 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@3f160732]
+2024-03-31 00:26:24,768 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - null
+2024-03-31 00:26:50,805 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:26:50,805 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 00:26:50,821 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 00:26:54,622 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 00:26:54,674 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 55188 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 00:26:54,674 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 00:26:55,938 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 00:26:56,013 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 47 ms. Found 0 JPA repository interfaces.
+2024-03-31 00:26:57,158 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 00:26:57,174 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:26:57,174 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 00:26:57,174 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 00:26:57,284 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 00:26:57,284 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2541 ms
+2024-03-31 00:26:57,590 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 00:26:58,047 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:c23d16c8-2a92-4669-9c79-3b931d156e78 user=SA
+2024-03-31 00:26:58,047 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 00:26:58,159 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 00:26:58,331 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 00:26:58,458 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 00:26:59,023 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 00:26:59,744 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 00:26:59,744 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:26:59,889 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 00:27:00,521 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:27:00,552 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 00:27:00,568 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 6.9 seconds (process running for 7.832)
+2024-03-31 00:27:03,244 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 00:27:03,244 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 00:27:03,244 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 00:27:03,578 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@704d8de4]
+2024-03-31 00:27:03,705 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - null
+2024-03-31 00:49:10,076 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:49:10,076 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 00:49:10,085 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 00:49:15,663 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 00:49:15,728 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 46976 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 00:49:15,728 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 00:49:16,847 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 00:49:16,973 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 115 ms. Found 1 JPA repository interface.
+2024-03-31 00:49:18,126 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 00:49:18,141 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:49:18,141 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 00:49:18,141 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 00:49:18,252 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 00:49:18,252 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2466 ms
+2024-03-31 00:49:18,559 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 00:49:18,974 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:86b9dbb3-d862-4392-aae0-0c60de1be7aa user=SA
+2024-03-31 00:49:18,974 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 00:49:19,052 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 00:49:19,241 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 00:49:19,321 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 00:49:19,826 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 00:49:21,363 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 00:49:21,410 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:49:21,929 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 00:49:22,421 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:49:22,452 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 00:49:22,468 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.49 seconds (process running for 8.549)
+2024-03-31 00:50:04,384 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 00:50:04,384 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 00:50:04,385 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 1 ms
+2024-03-31 00:50:04,527 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@432020ea]
+2024-03-31 00:50:16,507 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - null
+2024-03-31 00:56:55,888 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:56:55,903 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 00:56:55,903 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 00:56:59,321 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 00:56:59,374 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 44780 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 00:56:59,374 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 00:57:00,684 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 00:57:00,847 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 130 ms. Found 1 JPA repository interface.
+2024-03-31 00:57:01,994 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 00:57:02,010 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:57:02,010 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 00:57:02,010 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 00:57:02,105 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 00:57:02,121 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2679 ms
+2024-03-31 00:57:02,168 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 00:57:02,641 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 00:57:02,649 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 00:57:02,659 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 00:57:02,947 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 00:57:03,090 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 00:57:03,169 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 00:57:03,690 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 00:57:03,785 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 00:57:05,146 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 00:57:05,226 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 00:57:05,737 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 00:57:06,356 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 00:57:06,390 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 00:57:06,406 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.767 seconds (process running for 8.553)
+2024-03-31 00:57:11,770 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 00:57:11,771 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 00:57:11,774 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 1 ms
+2024-03-31 00:57:11,907 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@2b49cf7d]
+2024-03-31 00:57:21,435 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - null
+2024-03-31 01:14:03,810 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:14:03,810 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:14:03,823 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:14:08,134 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:14:08,185 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 57844 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:14:08,185 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:14:09,315 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:14:09,458 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 120 ms. Found 1 JPA repository interface.
+2024-03-31 01:14:10,531 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:14:10,547 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:14:10,563 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:14:10,563 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:14:10,641 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:14:10,641 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2401 ms
+2024-03-31 01:14:10,706 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:14:11,048 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:14:11,048 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:14:11,063 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:14:11,314 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:14:11,440 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:14:11,521 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:14:12,032 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:14:12,152 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 01:14:13,447 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:14:13,533 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:14:14,136 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:14:14,678 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:14:14,709 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:14:14,724 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.279 seconds (process running for 8.036)
+2024-03-31 01:14:18,904 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:14:18,914 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:14:18,914 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 01:14:19,069 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@a9c4ca7]
+2024-03-31 01:14:19,343 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@520edf36
+2024-03-31 01:14:19,368 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-2] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: No acceptable representation]
+2024-03-31 01:14:45,540 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-3] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@436dc3a6]
+2024-03-31 01:14:45,570 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-3] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@3263a17d
+2024-03-31 01:15:04,939 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: No acceptable representation]
+2024-03-31 01:19:23,830 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:19:23,830 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:19:23,830 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:19:27,874 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:19:27,922 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 57268 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:19:27,922 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:19:28,958 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:19:29,117 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 134 ms. Found 1 JPA repository interface.
+2024-03-31 01:19:30,221 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:19:30,238 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:19:30,238 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:19:30,238 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:19:30,347 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:19:30,347 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2353 ms
+2024-03-31 01:19:30,426 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:19:30,874 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:19:30,874 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:19:30,890 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:19:31,190 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:19:31,337 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:19:31,447 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:19:32,178 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:19:32,305 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 01:19:33,731 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:19:33,810 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:19:34,424 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:19:35,150 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:19:35,280 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:19:35,312 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 8.113 seconds (process running for 8.798)
+2024-03-31 01:19:38,081 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:19:38,081 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:19:38,100 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 18 ms
+2024-03-31 01:19:38,253 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@692af722]
+2024-03-31 01:19:38,524 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@2afad57c
+2024-03-31 01:19:38,546 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-2] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: No acceptable representation]
+2024-03-31 01:20:02,853 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:20:02,853 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:20:02,873 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:20:06,756 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:20:06,796 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 49920 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:20:06,796 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:20:07,773 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:20:07,899 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 105 ms. Found 1 JPA repository interface.
+2024-03-31 01:20:08,910 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:20:08,925 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:20:08,925 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:20:08,925 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:20:09,021 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:20:09,021 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2159 ms
+2024-03-31 01:20:09,068 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:20:09,410 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:20:09,415 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:20:09,431 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:20:09,701 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:20:09,899 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:20:10,014 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:20:10,574 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:20:10,715 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 01:20:12,101 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:20:12,174 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:20:12,663 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:20:13,158 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:20:13,206 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:20:13,206 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.101 seconds (process running for 7.785)
+2024-03-31 01:20:15,752 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:20:15,752 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:20:15,768 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 16 ms
+2024-03-31 01:20:15,909 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@7b302e4c]
+2024-03-31 01:20:16,284 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@6861ce60
+2024-03-31 01:20:16,290 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: No acceptable representation]
+2024-03-31 01:22:48,130 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:22:48,130 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:22:48,130 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:22:52,178 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:22:52,249 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 29556 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:22:52,252 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:22:53,411 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:22:53,537 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 111 ms. Found 1 JPA repository interface.
+2024-03-31 01:22:54,732 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:22:54,753 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:22:54,758 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:22:54,759 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:22:54,879 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:22:54,879 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2575 ms
+2024-03-31 01:22:54,958 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:22:55,400 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:22:55,400 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:22:55,431 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:22:55,748 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:22:55,921 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:22:56,021 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:22:56,542 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:22:56,653 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 01:22:57,826 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:22:57,905 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:22:58,394 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:22:58,884 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:22:58,931 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:22:58,947 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.448 seconds (process running for 8.106)
+2024-03-31 01:23:01,522 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:23:01,522 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:23:01,538 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 16 ms
+2024-03-31 01:23:01,699 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@5f2cfd0f]
+2024-03-31 01:23:02,058 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@63590515
+2024-03-31 01:23:02,089 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class br.com.itau.desafioseguros.adapters.entrypoint.api.response.AddInsuranceProductResponse] with preset Content-Type 'null']
+2024-03-31 01:26:15,645 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:26:15,645 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:26:15,645 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:26:22,015 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:26:22,057 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 17616 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:26:22,057 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:26:23,236 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:26:23,425 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 167 ms. Found 1 JPA repository interface.
+2024-03-31 01:26:24,594 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:26:24,610 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:26:24,626 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:26:24,626 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:26:24,732 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:26:24,732 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2615 ms
+2024-03-31 01:26:24,790 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:26:25,247 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:26:25,262 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:26:25,278 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:26:25,562 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:26:25,705 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:26:25,815 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:26:26,305 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:26:26,384 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 01:26:27,590 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:26:27,669 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:26:28,189 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:26:28,709 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:26:28,753 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:26:28,759 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.417 seconds (process running for 8.112)
+2024-03-31 01:26:31,846 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:26:31,846 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:26:31,846 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 01:26:31,995 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@52102ec2]
+2024-03-31 01:26:32,259 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@547e713c
+2024-03-31 01:26:32,283 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class br.com.itau.desafioseguros.adapters.entrypoint.api.response.AddInsuranceProductResponse] with preset Content-Type 'null']
+2024-03-31 01:29:11,590 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:29:11,607 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:29:11,607 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:29:17,574 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:29:17,630 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 57688 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:29:17,630 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:29:18,625 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:29:18,748 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interface.
+2024-03-31 01:29:19,732 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:29:19,764 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:29:19,764 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:29:19,764 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:29:19,858 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:29:19,858 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2186 ms
+2024-03-31 01:29:19,921 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:29:20,299 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:29:20,299 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:29:20,316 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:29:20,331 ERROR o.s.b.w.e.t.TomcatStarter [main] Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'formContentFilter' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.filter.OrderedFormContentFilter]: Factory method 'formContentFilter' threw exception with message: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+2024-03-31 01:29:20,386 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2024-03-31 01:29:20,388 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-03-31 01:29:20,388 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:29:20,388 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2024-03-31 01:29:20,402 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-31 01:29:20,434 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at br.com.itau.desafioseguros.RestApiApplication.main(RestApiApplication.java:10)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:145)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'formContentFilter' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.filter.OrderedFormContentFilter]: Factory method 'formContentFilter' threw exception with message: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.filter.OrderedFormContentFilter]: Factory method 'formContentFilter' threw exception with message: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:647)
+	... 56 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+	at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:85)
+	at org.springframework.web.filter.FormContentFilter.<init>(FormContentFilter.java:61)
+	at org.springframework.boot.web.servlet.filter.OrderedFormContentFilter.<init>(OrderedFormContentFilter.java:29)
+	at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration.formContentFilter(WebMvcAutoConfiguration.java:174)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 57 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.databind.exc.InvalidDefinitionException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 66 common frames omitted
+2024-03-31 01:30:41,731 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:30:41,773 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 51600 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:30:41,773 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:30:43,237 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:30:43,406 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 147 ms. Found 1 JPA repository interface.
+2024-03-31 01:30:44,766 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:30:44,774 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:30:44,774 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:30:44,774 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:30:44,884 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:30:44,884 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3040 ms
+2024-03-31 01:30:44,946 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:30:45,500 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:30:45,516 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:30:45,531 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:30:45,836 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:30:45,994 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:30:46,107 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:30:46,629 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:30:46,709 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 01:30:46,979 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: javax/xml/bind/annotation/XmlElement
+2024-03-31 01:30:46,979 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:30:46,979 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2024-03-31 01:30:46,979 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2024-03-31 01:30:46,994 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-31 01:30:47,026 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: javax/xml/bind/annotation/XmlElement
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at br.com.itau.desafioseguros.RestApiApplication.main(RestApiApplication.java:10)
+Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlElement
+	at com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector.<init>(JaxbAnnotationIntrospector.java:137)
+	at com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector.<init>(JaxbAnnotationIntrospector.java:124)
+	at com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule.setupModule(JaxbAnnotationModule.java:98)
+	at com.fasterxml.jackson.databind.ObjectMapper.registerModule(ObjectMapper.java:879)
+	at com.fasterxml.jackson.databind.ObjectMapper.registerModules(ObjectMapper.java:1081)
+	at com.fasterxml.jackson.databind.ObjectMapper.findAndRegisterModules(ObjectMapper.java:1165)
+	at org.hibernate.type.format.jackson.JacksonXmlFormatMapper.createXmlMapper(JacksonXmlFormatMapper.java:48)
+	at org.hibernate.type.format.jackson.JacksonXmlFormatMapper.<init>(JacksonXmlFormatMapper.java:38)
+	at org.hibernate.type.format.jackson.JacksonIntegration.<clinit>(JacksonIntegration.java:17)
+	at org.hibernate.boot.internal.SessionFactoryOptionsBuilder.lambda$determineJsonFormatMapper$6(SessionFactoryOptionsBuilder.java:803)
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:220)
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:180)
+	at org.hibernate.boot.internal.SessionFactoryOptionsBuilder.determineJsonFormatMapper(SessionFactoryOptionsBuilder.java:799)
+	at org.hibernate.boot.internal.SessionFactoryOptionsBuilder.<init>(SessionFactoryOptionsBuilder.java:305)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.<init>(SessionFactoryBuilderImpl.java:49)
+	at org.hibernate.boot.internal.DefaultSessionFactoryBuilderService.createSessionFactoryBuilder(DefaultSessionFactoryBuilderService.java:26)
+	at org.hibernate.boot.internal.MetadataImpl.getSessionFactoryBuilder(MetadataImpl.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.annotation.XmlElement
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 41 common frames omitted
+2024-03-31 01:32:52,102 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:32:52,142 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 51580 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:32:52,142 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:32:53,290 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:32:53,415 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interface.
+2024-03-31 01:32:54,525 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:32:54,541 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:32:54,541 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:32:54,541 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:32:54,652 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:32:54,652 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2442 ms
+2024-03-31 01:32:54,715 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:32:55,141 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:32:55,157 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:32:55,174 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:32:55,427 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:32:55,557 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:32:55,629 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:32:56,174 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:32:56,268 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 01:32:57,594 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:32:57,674 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:32:58,241 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:32:58,793 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:32:58,840 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:32:58,840 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.417 seconds (process running for 8.098)
+2024-03-31 01:33:11,196 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:33:11,212 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:33:11,212 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 0 ms
+2024-03-31 01:33:11,356 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@e750624]
+2024-03-31 01:33:11,750 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@f2f3eca
+2024-03-31 01:33:11,752 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class br.com.itau.desafioseguros.adapters.entrypoint.api.response.AddInsuranceProductResponse] with preset Content-Type 'null']
+2024-03-31 01:33:48,508 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:33:48,508 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:33:48,520 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:33:53,766 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:33:53,836 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 40736 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:33:53,836 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:33:54,831 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:33:54,959 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 113 ms. Found 1 JPA repository interface.
+2024-03-31 01:33:56,159 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:33:56,174 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:33:56,174 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:33:56,174 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:33:56,284 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:33:56,284 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2384 ms
+2024-03-31 01:33:56,347 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:33:56,693 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 01:33:56,709 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:33:56,725 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 01:33:56,962 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:33:57,106 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:33:57,184 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:33:57,690 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:33:57,799 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 01:33:59,006 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:33:59,074 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:33:59,599 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:34:00,199 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:34:00,247 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:34:00,247 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.271 seconds (process running for 8.044)
+2024-03-31 01:34:09,358 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:34:09,358 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:34:09,358 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 01:34:09,553 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@772c8778]
+2024-03-31 01:34:09,884 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@e4afae0
+2024-03-31 01:34:09,900 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class br.com.itau.desafioseguros.adapters.entrypoint.api.response.AddInsuranceProductResponse] with preset Content-Type 'null']
+2024-03-31 01:40:22,335 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:40:22,335 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:40:22,351 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:40:25,474 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:40:25,549 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 984 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:40:25,549 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:40:26,590 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:40:26,706 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interface.
+2024-03-31 01:40:27,906 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:40:27,922 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:40:27,922 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:40:27,922 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:40:28,022 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:40:28,037 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2414 ms
+2024-03-31 01:40:28,290 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:40:28,684 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:65c6c5f9-fd6f-4e9d-95f0-22b241adb0af user=SA
+2024-03-31 01:40:28,684 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:40:28,778 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:40:28,921 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:40:29,000 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:40:29,465 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:40:30,873 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:40:30,911 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:40:31,431 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:40:31,975 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:40:32,015 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:40:32,031 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.252 seconds (process running for 7.978)
+2024-03-31 01:40:35,959 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:40:35,959 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:40:35,959 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 01:40:36,167 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@61abb771]
+2024-03-31 01:40:36,579 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@43cfa8bc
+2024-03-31 01:40:36,594 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class br.com.itau.desafioseguros.adapters.entrypoint.api.response.AddInsuranceProductResponse] with preset Content-Type 'null']
+2024-03-31 01:42:58,018 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:42:58,018 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:42:58,034 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:43:00,904 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:43:00,978 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 43712 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:43:00,978 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:43:02,200 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:43:02,358 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 135 ms. Found 1 JPA repository interface.
+2024-03-31 01:43:03,558 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:43:03,574 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:43:03,590 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:43:03,590 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:43:03,706 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:43:03,716 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2662 ms
+2024-03-31 01:43:03,967 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:43:04,252 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bee8472d-81ab-4649-8779-66efbb64a137 user=SA
+2024-03-31 01:43:04,268 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:43:04,331 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:43:04,458 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:43:04,552 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:43:05,026 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:43:06,456 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:43:06,566 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:43:07,174 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:43:07,858 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:43:07,905 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:43:07,921 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.731 seconds (process running for 8.435)
+2024-03-31 01:43:18,531 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:43:18,531 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:43:18,544 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 13 ms
+2024-03-31 01:43:18,769 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@1338e910]
+2024-03-31 01:43:19,110 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@3f73a3e2
+2024-03-31 01:43:19,132 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class br.com.itau.desafioseguros.adapters.entrypoint.api.response.AddInsuranceProductResponse] with preset Content-Type 'null']
+2024-03-31 01:45:44,250 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:45:44,266 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:45:44,266 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:45:48,246 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:45:48,306 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 3924 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:45:48,306 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:45:49,358 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:45:49,483 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 113 ms. Found 1 JPA repository interface.
+2024-03-31 01:45:50,637 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:45:50,652 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:45:50,652 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:45:50,652 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:45:50,746 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:45:50,746 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2385 ms
+2024-03-31 01:45:51,028 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:45:51,340 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ed1f3d5d-28c5-43de-b879-af897c580379 user=SA
+2024-03-31 01:45:51,356 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:45:51,428 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:45:51,563 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:45:51,641 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:45:52,084 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:45:53,531 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:45:53,574 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:45:54,131 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:45:54,699 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:45:54,731 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:45:54,746 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.219 seconds (process running for 8.033)
+2024-03-31 01:45:58,959 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:45:58,959 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:45:58,959 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 01:45:59,226 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@98453e5]
+2024-03-31 01:45:59,525 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@595dc924
+2024-03-31 01:45:59,541 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8085-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class br.com.itau.desafioseguros.adapters.entrypoint.api.response.AddInsuranceProductResponse] with preset Content-Type 'application/json']
+2024-03-31 01:46:58,689 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:46:58,700 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:46:58,715 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:47:02,936 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:47:02,993 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 31176 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:47:02,993 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:47:04,135 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:47:04,300 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 150 ms. Found 1 JPA repository interface.
+2024-03-31 01:47:05,522 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:47:05,538 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:47:05,538 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:47:05,538 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:47:05,640 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:47:05,642 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2575 ms
+2024-03-31 01:47:05,877 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:47:06,209 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:4c7b7e6c-5f60-4876-93b7-c6206cd6d493 user=SA
+2024-03-31 01:47:06,209 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:47:06,290 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:47:06,431 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:47:06,510 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:47:07,031 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:47:08,437 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:47:08,484 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:47:08,973 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:47:09,532 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:47:09,571 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:47:09,579 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.404 seconds (process running for 8.202)
+2024-03-31 01:47:11,835 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:47:11,835 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:47:11,835 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 01:47:12,108 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@2023226f]
+2024-03-31 01:47:12,540 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@718850e0
+2024-03-31 01:47:54,774 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:47:54,774 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:47:54,789 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:47:58,638 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:47:58,705 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 57856 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:47:58,705 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:47:59,765 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:47:59,922 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 137 ms. Found 1 JPA repository interface.
+2024-03-31 01:48:01,341 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:48:01,358 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:48:01,366 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:48:01,366 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:48:01,481 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:48:01,481 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2710 ms
+2024-03-31 01:48:01,825 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:48:02,253 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:b748c031-f9d7-43d7-a1cf-10cebfb55798 user=SA
+2024-03-31 01:48:02,253 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:48:02,332 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:48:02,491 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:48:02,574 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:48:03,131 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:48:04,685 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:48:04,732 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:48:05,271 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:48:05,874 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:48:05,923 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:48:05,923 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.989 seconds (process running for 8.667)
+2024-03-31 01:48:19,309 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:48:19,309 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:48:19,309 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 0 ms
+2024-03-31 01:48:19,529 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@50d3c99c]
+2024-03-31 01:48:19,815 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@6ed1997a
+2024-03-31 01:48:26,356 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-4] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@7413f5ad]
+2024-03-31 01:48:45,226 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-4] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@1ab25a8e
+2024-03-31 01:49:00,876 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-3] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@25f0ef18]
+2024-03-31 01:49:24,700 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51s135ms193µs200ns).
+2024-03-31 01:49:24,701 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-3] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@22446d73
+2024-03-31 01:50:23,392 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:50:23,392 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:50:23,408 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:50:26,309 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:50:26,376 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 19796 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:50:26,376 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:50:27,421 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:50:27,563 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 111 ms. Found 1 JPA repository interface.
+2024-03-31 01:50:28,616 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:50:28,631 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:50:28,631 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:50:28,631 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:50:28,726 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:50:28,726 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2294 ms
+2024-03-31 01:50:28,961 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:50:29,389 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:f9f5d1fc-fe83-40ba-8f6a-89323af6fe49 user=SA
+2024-03-31 01:50:29,389 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:50:29,468 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:50:29,609 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:50:29,688 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:50:30,100 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:50:31,315 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:50:31,362 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:50:31,868 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:50:32,405 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:50:32,452 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:50:32,468 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 6.852 seconds (process running for 7.532)
+2024-03-31 01:50:37,904 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:50:37,904 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:50:37,904 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 0 ms
+2024-03-31 01:50:38,179 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@7c7405f3]
+2024-03-31 01:50:38,516 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@a6fe036
+2024-03-31 01:56:14,850 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:56:14,868 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:56:14,868 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:56:19,465 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:56:19,553 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 42764 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:56:19,553 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:56:20,741 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:56:20,915 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 142 ms. Found 1 JPA repository interface.
+2024-03-31 01:56:22,121 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:56:22,121 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:56:22,136 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:56:22,136 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:56:22,231 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:56:22,231 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2603 ms
+2024-03-31 01:56:22,536 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:56:22,869 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:9f49e7b7-9ad4-40b0-908f-215227ae213f user=SA
+2024-03-31 01:56:22,885 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:56:22,979 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:56:23,105 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:56:23,184 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:56:23,593 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:56:24,974 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:56:25,036 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:56:25,737 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:56:26,384 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:56:26,437 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:56:26,453 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 8.028 seconds (process running for 9.109)
+2024-03-31 01:56:29,730 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:56:29,732 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:56:29,732 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 01:56:29,994 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@7272a577]
+2024-03-31 01:56:30,289 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@54fd4194
+2024-03-31 01:57:24,282 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:57:24,282 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 01:57:24,298 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 01:57:44,961 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 01:57:45,021 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 55704 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 01:57:45,037 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 01:57:46,093 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 01:57:46,221 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 114 ms. Found 1 JPA repository interface.
+2024-03-31 01:57:47,531 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 01:57:47,562 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:57:47,562 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 01:57:47,562 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 01:57:47,689 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 01:57:47,689 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2600 ms
+2024-03-31 01:57:47,945 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 01:57:48,278 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:feee47df-69c9-4d90-afca-d6047b506bbb user=SA
+2024-03-31 01:57:48,278 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 01:57:48,341 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 01:57:48,484 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 01:57:48,562 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 01:57:49,008 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 01:57:50,325 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 01:57:50,374 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 01:57:50,878 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 01:57:51,431 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 01:57:51,478 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 01:57:51,494 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.268 seconds (process running for 7.964)
+2024-03-31 01:57:55,271 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 01:57:55,271 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 01:57:55,271 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 0 ms
+2024-03-31 01:57:55,517 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@4992cf1a]
+2024-03-31 01:57:55,806 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@a82bcb9
+2024-03-31 01:58:39,212 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-3] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@6c08e301]
+2024-03-31 01:58:39,228 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-3] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@614ef919
+2024-03-31 01:59:23,726 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-4] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@63b350c0]
+2024-03-31 01:59:23,747 ERROR o.a.j.l.DirectJDKLog [http-nio-8085-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: br.com.itau.desafioseguros.application.exceptions.CommandValidationException: A validação do payload retornou erro(s)] with root cause
+br.com.itau.desafioseguros.application.exceptions.CommandValidationException: A validação do payload retornou erro(s)
+	at br.com.itau.desafioseguros.application.command.validation.CommandValidator.validate(CommandValidator.java:31)
+	at br.com.itau.desafioseguros.application.command.handlers.AddInsuranceProductCommandHandler.handle(AddInsuranceProductCommandHandler.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at br.com.itau.desafioseguros.crosscutting.logging.LoggingAspect.logAround(LoggingAspect.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at br.com.itau.desafioseguros.application.command.handlers.AddInsuranceProductCommandHandler$$SpringCGLIB$$0.handle(<generated>)
+	at br.com.itau.desafioseguros.adapters.entrypoint.api.controller.InsuranceProductController.add(InsuranceProductController.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-31 02:00:48,728 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 02:00:48,728 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 02:00:48,728 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 02:01:41,279 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 02:01:41,358 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 48232 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 02:01:41,358 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 02:01:42,738 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 02:01:42,884 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 128 ms. Found 1 JPA repository interface.
+2024-03-31 02:01:43,974 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 02:01:43,990 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 02:01:43,990 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 02:01:43,990 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 02:01:44,069 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 02:01:44,069 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2648 ms
+2024-03-31 02:01:44,131 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 02:01:44,510 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 02:01:44,510 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 02:01:44,525 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 02:01:44,748 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 02:01:44,873 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 02:01:44,952 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 02:01:45,425 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 02:01:45,521 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 02:01:46,706 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 02:01:46,772 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 02:01:47,275 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 02:01:47,841 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 02:01:47,889 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 02:01:47,904 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 7.297 seconds (process running for 8.018)
+2024-03-31 02:01:51,480 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 02:01:51,480 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-03-31 02:01:51,488 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 0 ms
+2024-03-31 02:01:51,692 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-1] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@1b884e21]
+2024-03-31 02:01:51,869 ERROR o.a.j.l.DirectJDKLog [http-nio-8085-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: br.com.itau.desafioseguros.application.exceptions.CommandValidationException: A validação do payload retornou erro(s)] with root cause
+br.com.itau.desafioseguros.application.exceptions.CommandValidationException: A validação do payload retornou erro(s)
+	at br.com.itau.desafioseguros.application.command.validation.CommandValidator.validate(CommandValidator.java:31)
+	at br.com.itau.desafioseguros.application.command.handlers.AddInsuranceProductCommandHandler.handle(AddInsuranceProductCommandHandler.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at br.com.itau.desafioseguros.crosscutting.logging.LoggingAspect.logAround(LoggingAspect.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at br.com.itau.desafioseguros.application.command.handlers.AddInsuranceProductCommandHandler$$SpringCGLIB$$0.handle(<generated>)
+	at br.com.itau.desafioseguros.adapters.entrypoint.api.controller.InsuranceProductController.add(InsuranceProductController.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-03-31 02:01:58,599 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-3] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@674ba807]
+2024-03-31 02:01:58,807 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-3] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@e818407
+2024-03-31 02:08:15,141 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 02:08:15,141 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-31 02:08:15,141 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-31 02:08:21,405 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-03-31 02:08:21,523 INFO o.s.b.StartupInfoLogger [main] Starting RestApiApplication using Java 17.0.10 with PID 58384 (C:\Users\vitho\Desktop\dev\desafioseguros\configuration\target\classes started by vitho in C:\Users\vitho\Desktop\dev\desafioseguros)
+2024-03-31 02:08:21,523 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-31 02:08:22,915 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-31 02:08:23,041 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 125 ms. Found 1 JPA repository interface.
+2024-03-31 02:08:24,203 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8085 (http)
+2024-03-31 02:08:24,217 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2024-03-31 02:08:24,217 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2024-03-31 02:08:24,217 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-31 02:08:24,358 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-03-31 02:08:24,358 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2721 ms
+2024-03-31 02:08:24,437 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-31 02:08:24,910 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-03-31 02:08:24,910 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-31 02:08:24,925 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-ui'. Database available at 'jdbc:h2:mem:testdb'
+2024-03-31 02:08:25,273 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-31 02:08:25,421 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-31 02:08:25,533 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-03-31 02:08:26,042 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-31 02:08:26,150 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-31 02:08:27,621 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-31 02:08:27,708 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-31 02:08:28,221 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-31 02:08:28,774 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2024-03-31 02:08:28,810 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8085 (http) with context path ''
+2024-03-31 02:08:28,822 INFO o.s.b.StartupInfoLogger [main] Started RestApiApplication in 8.308 seconds (process running for 9.093)
+2024-03-31 02:08:32,199 INFO o.a.j.l.DirectJDKLog [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-31 02:08:32,199 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-03-31 02:08:32,199 INFO o.s.w.s.FrameworkServlet [http-nio-8085-exec-2] Completed initialization in 0 ms
+2024-03-31 02:08:32,358 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] >> handle() - [br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand@37426db]
+2024-03-31 02:08:32,659 INFO b.c.i.d.c.l.LoggingAspect [http-nio-8085-exec-2] << handle() - br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse@5e634f84
