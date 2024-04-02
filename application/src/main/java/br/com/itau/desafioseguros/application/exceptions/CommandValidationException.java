@@ -13,4 +13,11 @@ public class CommandValidationException extends BaseException {
         this.errorList = errorList;
     }
 
+    public List<ValidationError> getErrorList() {
+        return errorList;
+    }
+
+    public void setErrorList(List<ValidationError> errorList) {
+        this.errorList = errorList;
+    }
 }

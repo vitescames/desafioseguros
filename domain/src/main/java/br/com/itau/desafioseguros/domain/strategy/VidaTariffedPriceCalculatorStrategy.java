@@ -4,14 +4,11 @@ import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
 
 public class VidaTariffedPriceCalculatorStrategy implements TariffedPriceCalculatorStrategy {
 
-    private final float iof = 0.01f;
-
-    private final float pis = 0.022f;
-
-    private final float cofins = 0;
-
     @Override
     public float calculate(float basePrice) {
+        float iof = 0.01f;
+        float pis = 0.022f;
+        float cofins = 0;
         return this.calculate(basePrice, iof, pis, cofins);
     }
 

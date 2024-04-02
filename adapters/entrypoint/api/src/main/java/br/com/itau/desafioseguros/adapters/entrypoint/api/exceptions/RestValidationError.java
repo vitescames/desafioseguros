@@ -1,14 +1,19 @@
-package br.com.itau.desafioseguros.application.exceptions;
+package br.com.itau.desafioseguros.adapters.entrypoint.api.exceptions;
 
-public class ValidationError {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class RestValidationError {
+
+    @JsonProperty("campo")
     private String field;
 
+    @JsonProperty("valor_invalido")
     private String invalidValue;
 
+    @JsonProperty("causa")
     private String errorMessage;
 
-    public ValidationError(String field, String invalidValue, String errorMessage) {
+    public RestValidationError(String field, String invalidValue, String errorMessage) {
         this.field = field;
         this.invalidValue = invalidValue;
         this.errorMessage = errorMessage;
