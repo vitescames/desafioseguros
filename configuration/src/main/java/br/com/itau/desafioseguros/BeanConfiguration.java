@@ -1,6 +1,5 @@
 package br.com.itau.desafioseguros;
 
-import br.com.itau.desafioseguros.domain.factories.TariffedPriceCalculatorStrategyFactory;
 import br.com.itau.desafioseguros.domain.strategy.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

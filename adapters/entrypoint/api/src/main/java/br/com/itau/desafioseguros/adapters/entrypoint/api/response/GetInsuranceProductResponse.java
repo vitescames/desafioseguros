@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.UUID;
 
-public class AddInsuranceProductResponse {
+public class GetInsuranceProductResponse {
 
     private UUID id;
 
@@ -20,7 +20,7 @@ public class AddInsuranceProductResponse {
     @JsonProperty("preco_tarifado")
     private Float tariffedPrice;
 
-    public AddInsuranceProductResponse(UUID id, String name, String category, Float basePrice, Float tariffedPrice) {
+    public GetInsuranceProductResponse(UUID id, String name, String category, Float basePrice, Float tariffedPrice) {
         this.id = id;
         this.name = name;
         this.category = category;

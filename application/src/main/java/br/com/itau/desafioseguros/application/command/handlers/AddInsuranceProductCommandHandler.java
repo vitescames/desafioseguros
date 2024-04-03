@@ -6,9 +6,9 @@ import br.com.itau.desafioseguros.application.command.validation.AddInsurancePro
 import br.com.itau.desafioseguros.domain.annotations.LoggingMethod;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
 import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
-import br.com.itau.desafioseguros.domain.factories.TariffedPriceCalculatorStrategyFactory;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
 import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategyFactory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductName;
 import org.springframework.stereotype.Service;
@@ -40,7 +40,7 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
 
         float tariffedPrice = strategy.calculate(command.getPrecoBase());
 
-        InsuranceProduct insuranceProduct = new InsuranceProduct(new InsuranceProductId(UUID.randomUUID()),
+        InsuranceProduct insuranceProduct = InsuranceProduct.create(new InsuranceProductId(UUID.randomUUID()),
                 new InsuranceProductName(command.getNome()),
                 categoryEnum,
                 command.getPrecoBase(),

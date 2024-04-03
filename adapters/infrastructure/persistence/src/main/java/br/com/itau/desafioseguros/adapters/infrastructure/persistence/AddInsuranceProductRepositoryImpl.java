@@ -28,7 +28,7 @@ public class AddInsuranceProductRepositoryImpl implements AddInsuranceProductRep
 
         InsuranceProductEntity entitySaved = repository.save(entityToBeSaved);
 
-        return new InsuranceProduct(new InsuranceProductId(entitySaved.getId()),
+        return InsuranceProduct.create(new InsuranceProductId(entitySaved.getId()),
                 new InsuranceProductName(entitySaved.getName()),
                 InsuranceProductCategory.valueOf(entitySaved.getCategory()),
                 entitySaved.getBasePrice(),

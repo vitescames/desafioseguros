@@ -1,8 +1,8 @@
-package br.com.itau.desafioseguros.application.command.responses;
+package br.com.itau.desafioseguros.application.query.responses;
 
 import java.util.UUID;
 
-public class AddInsuranceProductCommandResponse implements CommandResponse {
+public class GetInsuranceProductQueryResponse implements QueryResponse {
 
     private UUID id;
 
@@ -14,7 +14,7 @@ public class AddInsuranceProductCommandResponse implements CommandResponse {
 
     private Float tariffedPrice;
 
-    public AddInsuranceProductCommandResponse(UUID id, String name, String category, Float basePrice, Float tariffedPrice) {
+    public GetInsuranceProductQueryResponse(UUID id, String name, String category, Float basePrice, Float tariffedPrice) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -41,4 +41,5 @@ public class AddInsuranceProductCommandResponse implements CommandResponse {
     public Float getTariffedPrice() {
         return tariffedPrice;
     }
+
 }

@@ -5,7 +5,7 @@ import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public class AddInsuranceProductCommand extends Command {
+public class AddInsuranceProductCommand implements Command {
 
     @NotBlank(message = "Não deve estar nulo/vazio")
     private String nome;
