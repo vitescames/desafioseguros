@@ -4,7 +4,7 @@ import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductNameEmptyExc
 
 public class InsuranceProductName {
 
-    private String name;
+    private final String name;
 
     public InsuranceProductName(String name) {
         if (name == null || name.isBlank())

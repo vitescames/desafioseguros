@@ -8,30 +8,30 @@ import jakarta.validation.constraints.NotNull;
 public class AddInsuranceProductCommand implements Command {
 
     @NotBlank(message = "Não deve estar nulo/vazio")
-    private String nome;
+    private final String name;
 
     @NotBlank(message = "Não deve estar nulo/vazio")
     @EnumValidator(enumClass = InsuranceProductCategory.class)
-    private String categoria;
+    private final String category;
 
-    @NotNull
-    private Float precoBase;
+    @NotNull(message = "Não deve estar nulo/vazio")
+    private final Float basePrice;
 
-    public AddInsuranceProductCommand(String nome, String categoria, float precoBase) {
-        this.nome = nome;
-        this.categoria = categoria;
-        this.precoBase = precoBase;
+    public AddInsuranceProductCommand(String name, String category, Float basePrice) {
+        this.name = name;
+        this.category = category;
+        this.basePrice = basePrice;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getCategory() {
+        return category;
     }
 
-    public float getPrecoBase() {
-        return precoBase;
+    public float getBasePrice() {
+        return basePrice;
     }
 }

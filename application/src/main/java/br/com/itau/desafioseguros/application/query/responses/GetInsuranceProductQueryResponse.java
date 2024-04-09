@@ -4,15 +4,15 @@ import java.util.UUID;
 
 public class GetInsuranceProductQueryResponse implements QueryResponse {
 
-    private UUID id;
+    private final UUID id;
 
-    private String name;
+    private final String name;
 
-    private String category;
+    private final String category;
 
-    private Float basePrice;
+    private final Float basePrice;
 
-    private Float tariffedPrice;
+    private final Float tariffedPrice;
 
     public GetInsuranceProductQueryResponse(UUID id, String name, String category, Float basePrice, Float tariffedPrice) {
         this.id = id;

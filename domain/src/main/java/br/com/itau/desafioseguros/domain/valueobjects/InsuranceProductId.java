@@ -6,7 +6,7 @@ import java.util.UUID;
 
 public class InsuranceProductId {
 
-    private UUID id;
+    private final UUID id;
 
     public InsuranceProductId(UUID id) {
         if (id == null)

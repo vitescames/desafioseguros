@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public abstract class CommandValidator<T extends Command> {
-    public void validate(T command) {
+public interface CommandValidator<T extends Command> {
+    default void validate(T command) {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
 

@@ -7,15 +7,15 @@ import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductName;
 
 public class InsuranceProduct {
 
-    private InsuranceProductId insuranceProductId;
+    private final InsuranceProductId insuranceProductId;
 
-    private InsuranceProductName insuranceProductName;
+    private final InsuranceProductName insuranceProductName;
 
-    private InsuranceProductCategory insuranceProductCategory;
+    private final InsuranceProductCategory insuranceProductCategory;
 
-    private Float insuranceProductBasePrice;
+    private final Float insuranceProductBasePrice;
 
-    private Float insuranceProductTariffedPrice;
+    private final Float insuranceProductTariffedPrice;
 
     private InsuranceProduct(InsuranceProductId insuranceProductId,
                              InsuranceProductName insuranceProductName,

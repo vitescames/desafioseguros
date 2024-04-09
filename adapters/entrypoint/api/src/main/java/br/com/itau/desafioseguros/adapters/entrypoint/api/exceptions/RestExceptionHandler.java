@@ -22,7 +22,7 @@ public class RestExceptionHandler {
 
     @ExceptionHandler({HttpMessageNotReadableException.class})
     public ResponseEntity<RestErrorResponse> handleHttpMessageNotReadableExceptionExeption(HttpMessageNotReadableException ex) {
-        return new ResponseEntity<>(new RestErrorResponse("O formato ou sintaxe da requisição está incorreta, " +
+        return new ResponseEntity<>(new RestErrorResponse("O formato ou a sintaxe da requisição está incorreta, " +
                 "verifique e tente novamente", null),
                 HttpStatus.BAD_REQUEST);
     }
