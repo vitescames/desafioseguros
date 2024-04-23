@@ -1,4 +1,4 @@
-package br.com.itau.desafioseguros.adapters.entrypoint.api.exceptions;
+package br.com.itau.desafioseguros.adapters.entrypoint.api.exception;
 
 import br.com.itau.desafioseguros.application.exceptions.CommandValidationException;
 import org.springframework.http.HttpStatus;

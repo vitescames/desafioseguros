@@ -32,7 +32,7 @@ public class InsuranceProductController {
 
     @PostMapping
     public ResponseEntity<BaseResponse<GetInsuranceProductResponse>> add(@RequestBody AddInsuranceProductRequest request,
-                                                           UriComponentsBuilder uriBuilder) {
+                                                                         UriComponentsBuilder uriBuilder) {
         AddInsuranceProductCommand command = new AddInsuranceProductCommand(request.getName(),
                 request.getCategory(),
                 request.getBasePrice());

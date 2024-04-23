@@ -37,22 +37,17 @@ public class InsuranceProduct {
         if (insuranceProductId == null)
             throw new InsuranceProductIdNullException();
 
-
         if (insuranceProductName == null)
             throw new InsuranceProductNameEmptyException();
-
 
         if (insuranceProductCategory == null)
             throw new InsuranceProductCategoryNullException();
 
-
         if (insuranceProductBasePrice == null)
             throw new InsuranceProductBasePriceNullException();
 
-
         if (insuranceProductTariffedPrice == null)
             throw new InsuranceProductTariffedPriceNullException();
-
 
         return new InsuranceProduct(insuranceProductId,
                 insuranceProductName,

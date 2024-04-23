@@ -1,4 +1,4 @@
-package br.com.itau.desafioseguros.domain.annotations;
+package br.com.itau.desafioseguros.domain.stereotype;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

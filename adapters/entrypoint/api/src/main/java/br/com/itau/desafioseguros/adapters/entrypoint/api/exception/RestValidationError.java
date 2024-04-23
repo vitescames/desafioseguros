@@ -1,4 +1,4 @@
-package br.com.itau.desafioseguros.adapters.entrypoint.api.exceptions;
+package br.com.itau.desafioseguros.adapters.entrypoint.api.exception;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

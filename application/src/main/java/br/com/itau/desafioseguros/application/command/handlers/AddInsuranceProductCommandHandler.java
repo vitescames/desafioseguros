@@ -3,7 +3,7 @@ package br.com.itau.desafioseguros.application.command.handlers;
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
-import br.com.itau.desafioseguros.domain.annotations.LoggingMethod;
+import br.com.itau.desafioseguros.domain.stereotype.LoggingMethod;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
 import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;

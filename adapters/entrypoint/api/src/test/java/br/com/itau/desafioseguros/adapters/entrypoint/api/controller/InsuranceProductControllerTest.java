@@ -9,6 +9,8 @@ import br.com.itau.desafioseguros.application.query.responses.GetInsuranceProduc
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -19,9 +21,11 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.List;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -40,8 +44,11 @@ class InsuranceProductControllerTest {
     @Mock
     private QueryHandler<GetAllInsuranceProductQuery, GetInsuranceProductQueryResponse> queryHandler;
 
+    @Captor
+    private ArgumentCaptor<AddInsuranceProductCommand> captorCommand;
+
     @BeforeEach
-    public void setup() {
+    void setup() {
         mockMvc = MockMvcBuilders.standaloneSetup(insuranceProductController)
                 .build();
     }
@@ -49,7 +56,7 @@ class InsuranceProductControllerTest {
     @Test
     void add_test() throws Exception {
         UUID uuid = UUID.fromString("d16a4f7d-fa2c-4ea1-ac9c-c2fce8088541");
-        when(commandHandler.handle(any(AddInsuranceProductCommand.class))).thenReturn(new AddInsuranceProductCommandResponse(uuid,
+        when(commandHandler.handle(captorCommand.capture())).thenReturn(new AddInsuranceProductCommandResponse(uuid,
                 "teste",
                 "teste",
                 100f,
@@ -77,6 +84,12 @@ class InsuranceProductControllerTest {
                                 }
                             ]
                         }"""));
+
+        AddInsuranceProductCommand command = captorCommand.getValue();
+
+        assertEquals(100f, command.getBasePrice());
+        assertEquals("VIDA", command.getCategory());
+        assertEquals("Seguro de Vida Individual", command.getName());
     }
 
     @Test
