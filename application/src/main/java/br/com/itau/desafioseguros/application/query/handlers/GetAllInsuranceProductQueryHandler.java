@@ -17,9 +17,9 @@ public class GetAllInsuranceProductQueryHandler implements QueryHandler<GetAllIn
     @Override
     public List<GetInsuranceProductQueryResponse> handle(GetAllInsuranceProductQuery query) {
         return repository.get().stream().map(insuranceProduct -> new GetInsuranceProductQueryResponse(insuranceProduct.getInsuranceProductId().getId(),
-                insuranceProduct.getInsuranceProductName().getName(),
-                insuranceProduct.getInsuranceProductCategory().toString(),
-                insuranceProduct.getInsuranceProductBasePrice(),
-                insuranceProduct.getInsuranceProductTariffedPrice())).toList();
+                insuranceProduct.getName(),
+                insuranceProduct.getCategory().toString(),
+                insuranceProduct.getBasePrice(),
+                insuranceProduct.getTariffedPrice())).toList();
     }
 }

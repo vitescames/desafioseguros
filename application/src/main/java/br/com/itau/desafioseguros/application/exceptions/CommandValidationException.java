@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CommandValidationException extends BaseException {
 
-    private List<ValidationError> errorList;
+    private final transient List<ValidationError> errorList;
 
     public CommandValidationException(List<ValidationError> errorList) {
         super("A validação do payload retornou erro(s)");
@@ -15,9 +15,5 @@ public class CommandValidationException extends BaseException {
 
     public List<ValidationError> getErrorList() {
         return errorList;
-    }
-
-    public void setErrorList(List<ValidationError> errorList) {
-        this.errorList = errorList;
     }
 }

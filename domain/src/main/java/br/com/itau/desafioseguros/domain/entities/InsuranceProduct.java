@@ -3,76 +3,75 @@ package br.com.itau.desafioseguros.domain.entities;
 import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.exceptions.*;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
-import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductName;
 
 public class InsuranceProduct {
 
     private final InsuranceProductId insuranceProductId;
 
-    private final InsuranceProductName insuranceProductName;
+    private final String name;
 
-    private final InsuranceProductCategory insuranceProductCategory;
+    private final InsuranceProductCategory category;
 
-    private final Float insuranceProductBasePrice;
+    private final Float basePrice;
 
-    private final Float insuranceProductTariffedPrice;
+    private final Float tariffedPrice;
 
     private InsuranceProduct(InsuranceProductId insuranceProductId,
-                             InsuranceProductName insuranceProductName,
-                             InsuranceProductCategory insuranceProductCategory,
-                             Float insuranceProductBasePrice,
-                             Float insuranceProductTariffedPrice) {
+                             String name,
+                             InsuranceProductCategory category,
+                             Float basePrice,
+                             Float tariffedPrice) {
         this.insuranceProductId = insuranceProductId;
-        this.insuranceProductName = insuranceProductName;
-        this.insuranceProductCategory = insuranceProductCategory;
-        this.insuranceProductBasePrice = insuranceProductBasePrice;
-        this.insuranceProductTariffedPrice = insuranceProductTariffedPrice;
+        this.name = name;
+        this.category = category;
+        this.basePrice = basePrice;
+        this.tariffedPrice = tariffedPrice;
     }
 
     public static InsuranceProduct create(InsuranceProductId insuranceProductId,
-                                          InsuranceProductName insuranceProductName,
-                                          InsuranceProductCategory insuranceProductCategory,
-                                          Float insuranceProductBasePrice,
-                                          Float insuranceProductTariffedPrice) {
+                                          String name,
+                                          InsuranceProductCategory category,
+                                          Float basePrice,
+                                          Float tariffedPrice) {
         if (insuranceProductId == null)
             throw new InsuranceProductIdNullException();
 
-        if (insuranceProductName == null)
+        if (name == null || name.isBlank())
             throw new InsuranceProductNameEmptyException();
 
-        if (insuranceProductCategory == null)
+        if (category == null)
             throw new InsuranceProductCategoryNullException();
 
-        if (insuranceProductBasePrice == null)
+        if (basePrice == null)
             throw new InsuranceProductBasePriceNullException();
 
-        if (insuranceProductTariffedPrice == null)
+        if (tariffedPrice == null)
             throw new InsuranceProductTariffedPriceNullException();
 
         return new InsuranceProduct(insuranceProductId,
-                insuranceProductName,
-                insuranceProductCategory,
-                insuranceProductBasePrice,
-                insuranceProductTariffedPrice);
+                name,
+                category,
+                basePrice,
+                tariffedPrice);
     }
 
     public InsuranceProductId getInsuranceProductId() {
         return insuranceProductId;
     }
 
-    public InsuranceProductName getInsuranceProductName() {
-        return insuranceProductName;
+    public String getName() {
+        return name;
     }
 
-    public InsuranceProductCategory getInsuranceProductCategory() {
-        return insuranceProductCategory;
+    public InsuranceProductCategory getCategory() {
+        return category;
     }
 
-    public Float getInsuranceProductBasePrice() {
-        return insuranceProductBasePrice;
+    public Float getBasePrice() {
+        return basePrice;
     }
 
-    public Float getInsuranceProductTariffedPrice() {
-        return insuranceProductTariffedPrice;
+    public Float getTariffedPrice() {
+        return tariffedPrice;
     }
 }

@@ -9,7 +9,6 @@ import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductReposit
 import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategyFactory;
 import br.com.itau.desafioseguros.domain.strategy.VidaTariffedPriceCalculatorStrategy;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
-import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -48,7 +47,7 @@ class AddInsuranceProductCommandHandlerTest {
         UUID uuid = UUID.fromString("d16a4f7d-fa2c-4ea1-ac9c-c2fce8088541");
         when(strategyFactory.getStrategy(any(InsuranceProductCategory.class))).thenReturn(new VidaTariffedPriceCalculatorStrategy());
         when(repository.add(insuranceProductArgumentCaptor.capture())).thenReturn(InsuranceProduct.create(new InsuranceProductId(uuid),
-                new InsuranceProductName("teste"),
+                "teste",
                 InsuranceProductCategory.VIDA,
                 100f,
                 105f));
@@ -64,10 +63,10 @@ class AddInsuranceProductCommandHandlerTest {
 
         InsuranceProduct insuranceProduct = insuranceProductArgumentCaptor.getValue();
         assertNotNull(insuranceProduct.getInsuranceProductId());
-        assertEquals("teste", insuranceProduct.getInsuranceProductName().getName());
-        assertEquals(InsuranceProductCategory.VIDA, insuranceProduct.getInsuranceProductCategory());
-        assertEquals(100f, insuranceProduct.getInsuranceProductBasePrice());
-        assertEquals(103.2f, insuranceProduct.getInsuranceProductTariffedPrice());
+        assertEquals("teste", insuranceProduct.getName());
+        assertEquals(InsuranceProductCategory.VIDA, insuranceProduct.getCategory());
+        assertEquals(100f, insuranceProduct.getBasePrice());
+        assertEquals(103.2f, insuranceProduct.getTariffedPrice());
     }
 
 }

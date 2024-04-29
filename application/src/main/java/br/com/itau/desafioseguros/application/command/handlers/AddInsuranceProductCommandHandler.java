@@ -3,14 +3,13 @@ package br.com.itau.desafioseguros.application.command.handlers;
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
-import br.com.itau.desafioseguros.domain.stereotype.LoggingMethod;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
 import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
+import br.com.itau.desafioseguros.domain.shared.decorators.LoggingMethod;
 import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategy;
 import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategyFactory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
-import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductName;
 
 import java.util.UUID;
 
@@ -33,23 +32,23 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
     public AddInsuranceProductCommandResponse handle(AddInsuranceProductCommand command) {
         validator.validate(command);
 
-        InsuranceProductCategory categoryEnum = InsuranceProductCategory.valueOf(command.getCategory());
+        InsuranceProductCategory categoryEnum = InsuranceProductCategory.valueOf(command.getCategoria());
         TariffedPriceCalculatorStrategy strategy = strategyFactory.getStrategy(categoryEnum);
 
-        float tariffedPrice = strategy.calculate(command.getBasePrice());
+        float tariffedPrice = strategy.calculate(command.getPrecoBase());
 
         InsuranceProduct insuranceProduct = InsuranceProduct.create(new InsuranceProductId(UUID.randomUUID()),
-                new InsuranceProductName(command.getName()),
+                command.getNome(),
                 categoryEnum,
-                command.getBasePrice(),
+                command.getPrecoBase(),
                 tariffedPrice);
 
         InsuranceProduct insuranceProductAdded = repository.add(insuranceProduct);
 
         return new AddInsuranceProductCommandResponse(insuranceProductAdded.getInsuranceProductId().getId(),
-                insuranceProductAdded.getInsuranceProductName().getName(),
-                insuranceProductAdded.getInsuranceProductCategory().toString(),
-                insuranceProductAdded.getInsuranceProductBasePrice(),
-                insuranceProductAdded.getInsuranceProductTariffedPrice());
+                insuranceProductAdded.getName(),
+                insuranceProductAdded.getCategory().toString(),
+                insuranceProductAdded.getBasePrice(),
+                insuranceProductAdded.getTariffedPrice());
     }
 }

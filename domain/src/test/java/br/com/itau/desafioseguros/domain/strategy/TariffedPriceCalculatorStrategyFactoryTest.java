@@ -1,6 +1,7 @@
 package br.com.itau.desafioseguros.domain.strategy;
 
 import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
+import br.com.itau.desafioseguros.domain.exceptions.TariffedPriceCalculatorStrategyNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(MockitoExtension.class)
 class TariffedPriceCalculatorStrategyFactoryTest {
@@ -52,6 +54,13 @@ class TariffedPriceCalculatorStrategyFactoryTest {
     void autoStrategy_test() {
         AutoTariffedPriceCalculatorStrategy strategy = (AutoTariffedPriceCalculatorStrategy) this.strategyFactory.getStrategy(InsuranceProductCategory.AUTO);
         assertEquals(110.5f, strategy.calculate(100f));
+    }
+
+    @Test
+    void nullStrategy_test() {
+        this.strategyFactory = new TariffedPriceCalculatorStrategyFactory(Set.of(new ViagemTariffedPriceCalculatorStrategy(),
+                new VidaTariffedPriceCalculatorStrategy()));
+        assertThrows(TariffedPriceCalculatorStrategyNotFoundException.class, () -> this.strategyFactory.getStrategy(InsuranceProductCategory.AUTO));
     }
 
 }
