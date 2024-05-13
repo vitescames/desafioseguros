@@ -4,9 +4,8 @@ import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand
 import br.com.itau.desafioseguros.application.command.handlers.AddInsuranceProductCommandHandler;
 import br.com.itau.desafioseguros.application.command.handlers.CommandHandler;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
-import br.com.itau.desafioseguros.application.command.validation.AddInsuranceProductCommandValidator;
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
-import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductQuery;
+import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery;
 import br.com.itau.desafioseguros.application.query.handlers.GetAllInsuranceProductQueryHandler;
 import br.com.itau.desafioseguros.application.query.handlers.QueryHandler;
 import br.com.itau.desafioseguros.application.query.responses.GetInsuranceProductQueryResponse;
@@ -52,19 +51,19 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public CommandValidator<AddInsuranceProductCommand> addInsuranceProductCommandValidator() {
-        return new AddInsuranceProductCommandValidator();
+    public CommandValidator commandValidator() {
+        return new CommandValidator();
     }
 
     @Bean
     public CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> addInsuranceProductCommandHandler(TariffedPriceCalculatorStrategyFactory strategyFactory,
-                                                                                                                            CommandValidator<AddInsuranceProductCommand> validator,
+                                                                                                                            CommandValidator validator,
                                                                                                                             AddInsuranceProductRepository repository) {
         return new AddInsuranceProductCommandHandler(strategyFactory, validator, repository);
     }
 
     @Bean
-    public QueryHandler<GetAllInsuranceProductQuery, GetInsuranceProductQueryResponse> getAllInsuranceProductQueryHandler(GetAllInsuranceProductRepository getAllInsuranceProductRepository) {
+    public QueryHandler<GetAllInsuranceProductsQuery, GetInsuranceProductQueryResponse> getAllInsuranceProductQueryHandler(GetAllInsuranceProductRepository getAllInsuranceProductRepository) {
         return new GetAllInsuranceProductQueryHandler(getAllInsuranceProductRepository);
     }
 }

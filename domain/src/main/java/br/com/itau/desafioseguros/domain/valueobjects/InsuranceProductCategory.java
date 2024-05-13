@@ -1,4 +1,4 @@
-package br.com.itau.desafioseguros.domain.enums;
+package br.com.itau.desafioseguros.domain.valueobjects;
 
 public enum InsuranceProductCategory {
     VIDA,

@@ -6,7 +6,7 @@ import br.com.itau.desafioseguros.adapters.entrypoint.api.response.GetInsuranceP
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
 import br.com.itau.desafioseguros.application.command.handlers.CommandHandler;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
-import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductQuery;
+import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery;
 import br.com.itau.desafioseguros.application.query.handlers.QueryHandler;
 import br.com.itau.desafioseguros.application.query.responses.GetInsuranceProductQueryResponse;
 import org.springframework.http.ResponseEntity;
@@ -20,14 +20,14 @@ import java.util.List;
 @RequestMapping("/insurance/products")
 public class InsuranceProductController {
 
-    private final CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> commandHandler;
+    private final CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> addInsuranceProductCommandHandler;
 
-    private final QueryHandler<GetAllInsuranceProductQuery, GetInsuranceProductQueryResponse> queryHandler;
+    private final QueryHandler<GetAllInsuranceProductsQuery, GetInsuranceProductQueryResponse> getAllInsuranceProductsQuery;
 
-    public InsuranceProductController(CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> commandHandler,
-                                      QueryHandler<GetAllInsuranceProductQuery, GetInsuranceProductQueryResponse> queryHandler) {
-        this.commandHandler = commandHandler;
-        this.queryHandler = queryHandler;
+    public InsuranceProductController(CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> addInsuranceProductCommandHandler,
+                                      QueryHandler<GetAllInsuranceProductsQuery, GetInsuranceProductQueryResponse> getAllInsuranceProductsQuery) {
+        this.addInsuranceProductCommandHandler = addInsuranceProductCommandHandler;
+        this.getAllInsuranceProductsQuery = getAllInsuranceProductsQuery;
     }
 
     @PostMapping
@@ -37,7 +37,7 @@ public class InsuranceProductController {
                 request.getCategory(),
                 request.getBasePrice());
 
-        AddInsuranceProductCommandResponse responseModel = commandHandler.handle(command);
+        AddInsuranceProductCommandResponse responseModel = addInsuranceProductCommandHandler.handle(command);
 
         URI uri = uriBuilder.path("/insurance/products/{id}").buildAndExpand(responseModel.getId()).toUri();
 
@@ -52,7 +52,7 @@ public class InsuranceProductController {
 
     @GetMapping
     public ResponseEntity<BaseResponse<List<GetInsuranceProductResponse>>> get() {
-        List<GetInsuranceProductQueryResponse> responseList = queryHandler.handle(new GetAllInsuranceProductQuery());
+        List<GetInsuranceProductQueryResponse> responseList = getAllInsuranceProductsQuery.handle(new GetAllInsuranceProductsQuery());
 
         List<GetInsuranceProductResponse> response = responseList.stream().map(product -> new GetInsuranceProductResponse(product.getId(),
                 product.getName(),

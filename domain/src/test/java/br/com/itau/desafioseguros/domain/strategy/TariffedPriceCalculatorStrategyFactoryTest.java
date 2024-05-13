@@ -1,7 +1,7 @@
 package br.com.itau.desafioseguros.domain.strategy;
 
-import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.exceptions.TariffedPriceCalculatorStrategyNotFoundException;
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

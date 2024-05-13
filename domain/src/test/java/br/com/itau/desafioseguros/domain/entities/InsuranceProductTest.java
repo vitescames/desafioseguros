@@ -1,7 +1,7 @@
 package br.com.itau.desafioseguros.domain.entities;
 
-import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.exceptions.*;
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +33,7 @@ class InsuranceProductTest {
     @Test
     void create_nameNull_test() {
         InsuranceProductId id = new InsuranceProductId(UUID.randomUUID());
-        assertThrows(InsuranceProductNameEmptyException.class, () -> InsuranceProduct.create(id,
+        assertThrows(InsuranceProductNameNulException.class, () -> InsuranceProduct.create(id,
                 null,
                 InsuranceProductCategory.VIDA,
                 100f,
@@ -43,7 +43,7 @@ class InsuranceProductTest {
     @Test
     void create_nameEmpty_test() {
         InsuranceProductId id = new InsuranceProductId(UUID.randomUUID());
-        assertThrows(InsuranceProductNameEmptyException.class, () -> InsuranceProduct.create(id,
+        assertThrows(InsuranceProductNameNulException.class, () -> InsuranceProduct.create(id,
                 "",
                 InsuranceProductCategory.VIDA,
                 100f,

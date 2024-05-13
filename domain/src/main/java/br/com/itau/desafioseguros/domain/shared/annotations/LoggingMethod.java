@@ -1,4 +1,4 @@
-package br.com.itau.desafioseguros.domain.shared.decorators;
+package br.com.itau.desafioseguros.domain.shared.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

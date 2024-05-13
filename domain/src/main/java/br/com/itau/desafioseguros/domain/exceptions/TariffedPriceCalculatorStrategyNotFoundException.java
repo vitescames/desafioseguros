@@ -1,6 +1,6 @@
 package br.com.itau.desafioseguros.domain.exceptions;
 
-import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 
 public class TariffedPriceCalculatorStrategyNotFoundException extends BaseException {
     public TariffedPriceCalculatorStrategyNotFoundException(InsuranceProductCategory insuranceProductCategory) {

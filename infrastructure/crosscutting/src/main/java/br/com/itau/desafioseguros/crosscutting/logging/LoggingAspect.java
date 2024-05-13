@@ -15,7 +15,7 @@ public class LoggingAspect {
 
     Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Around(value = "@annotation(br.com.itau.desafioseguros.domain.shared.decorators.LoggingMethod)")
+    @Around(value = "@annotation(br.com.itau.desafioseguros.domain.shared.annotations.LoggingMethod)")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
         String methodName = joinPoint.getSignature().getName();

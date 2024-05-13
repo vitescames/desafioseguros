@@ -3,7 +3,7 @@ package br.com.itau.desafioseguros.adapters.entrypoint.api.controller;
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
 import br.com.itau.desafioseguros.application.command.handlers.CommandHandler;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
-import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductQuery;
+import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery;
 import br.com.itau.desafioseguros.application.query.handlers.QueryHandler;
 import br.com.itau.desafioseguros.application.query.responses.GetInsuranceProductQueryResponse;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,7 +42,7 @@ class InsuranceProductControllerTest {
     private CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> commandHandler;
 
     @Mock
-    private QueryHandler<GetAllInsuranceProductQuery, GetInsuranceProductQueryResponse> queryHandler;
+    private QueryHandler<GetAllInsuranceProductsQuery, GetInsuranceProductQueryResponse> queryHandler;
 
     @Captor
     private ArgumentCaptor<AddInsuranceProductCommand> captorCommand;
@@ -86,15 +86,15 @@ class InsuranceProductControllerTest {
 
         AddInsuranceProductCommand command = captorCommand.getValue();
 
-        assertEquals(100f, command.getPrecoBase());
-        assertEquals("VIDA", command.getCategoria());
-        assertEquals("Seguro de Vida Individual", command.getNome());
+        assertEquals(100f, command.getBasePrice());
+        assertEquals("VIDA", command.getCategory());
+        assertEquals("Seguro de Vida Individual", command.getName());
     }
 
     @Test
     void get_test() throws Exception {
         UUID uuid = UUID.fromString("d16a4f7d-fa2c-4ea1-ac9c-c2fce8088541");
-        when(queryHandler.handle(any(GetAllInsuranceProductQuery.class))).thenReturn(List.of(new GetInsuranceProductQueryResponse(uuid,
+        when(queryHandler.handle(any(GetAllInsuranceProductsQuery.class))).thenReturn(List.of(new GetInsuranceProductQueryResponse(uuid,
                 "teste",
                 "teste",
                 100f,

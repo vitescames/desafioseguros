@@ -1,7 +1,7 @@
 package br.com.itau.desafioseguros.adapters.entrypoint.api.exception;
 
 import br.com.itau.desafioseguros.application.exceptions.CommandValidationException;
-import br.com.itau.desafioseguros.domain.shared.utils.CaseConverterUtil;
+import jakarta.validation.ConstraintViolation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -14,10 +14,7 @@ public class RestExceptionHandler {
     @ExceptionHandler({CommandValidationException.class})
     public ResponseEntity<RestErrorResponse> handleCommandExeption(CommandValidationException ex) {
         return new ResponseEntity<>(new RestErrorResponse(ex.getMessage(),
-                ex.getErrorList().stream().map(validationError ->
-                        new RestValidationError(CaseConverterUtil.convertCamelCaseToSnakeCase(validationError.getField()),
-                                validationError.getInvalidValue(),
-                                validationError.getErrorMessage()))
+                ex.getErrorList().stream().map(ConstraintViolation::getMessage)
                         .toList()), HttpStatus.UNPROCESSABLE_ENTITY);
     }
 

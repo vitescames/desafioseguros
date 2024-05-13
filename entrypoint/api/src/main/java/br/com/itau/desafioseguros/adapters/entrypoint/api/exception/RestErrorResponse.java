@@ -15,9 +15,9 @@ public class RestErrorResponse {
     private String message;
 
     @JsonProperty("erros")
-    private List<RestValidationError> errors;
+    private List<String> errors;
 
-    public RestErrorResponse(String message, List<RestValidationError> errors) {
+    public RestErrorResponse(String message, List<String> errors) {
         this.message = message;
         this.errors = errors;
     }
@@ -30,11 +30,11 @@ public class RestErrorResponse {
         this.message = message;
     }
 
-    public List<RestValidationError> getErrors() {
+    public List<String> getErrors() {
         return errors;
     }
 
-    public void setErrors(List<RestValidationError> errors) {
+    public void setErrors(List<String> errors) {
         this.errors = errors;
     }
 

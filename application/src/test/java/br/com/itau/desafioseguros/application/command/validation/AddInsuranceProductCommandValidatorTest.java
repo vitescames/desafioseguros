@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 class AddInsuranceProductCommandValidatorTest {
 
-    private final AddInsuranceProductCommandValidator validator = new AddInsuranceProductCommandValidator();
+    private final CommandValidator validator = new CommandValidator();
 
     @Test
     void validate_test() {

@@ -1,6 +1,6 @@
 package br.com.itau.desafioseguros.domain.strategy;
 
-import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 
 public interface TariffedPriceCalculatorStrategy {
     float calculate(float basePrice);

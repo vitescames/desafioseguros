@@ -4,10 +4,10 @@ import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
-import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
 import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategyFactory;
 import br.com.itau.desafioseguros.domain.strategy.VidaTariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,7 +31,7 @@ class AddInsuranceProductCommandHandlerTest {
     private TariffedPriceCalculatorStrategyFactory strategyFactory;
 
     @Mock
-    private CommandValidator<AddInsuranceProductCommand> validator;
+    private CommandValidator validator;
 
     @Mock
     private AddInsuranceProductRepository repository;

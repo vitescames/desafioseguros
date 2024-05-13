@@ -3,7 +3,7 @@ package br.com.itau.desafioseguros.adapters.infrastructure.persistence;
 import br.com.itau.desafioseguros.adapters.infrastructure.persistence.orm.InsuranceProductEntity;
 import br.com.itau.desafioseguros.adapters.infrastructure.persistence.repositories.InsuranceProductRepository;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
-import br.com.itau.desafioseguros.domain.enums.InsuranceProductCategory;
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
