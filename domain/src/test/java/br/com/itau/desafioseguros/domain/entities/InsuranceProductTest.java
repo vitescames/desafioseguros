@@ -5,6 +5,7 @@ import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -17,8 +18,8 @@ class InsuranceProductTest {
         assertDoesNotThrow(() -> InsuranceProduct.create(new InsuranceProductId(UUID.randomUUID()),
                 "teste",
                 InsuranceProductCategory.VIDA,
-                100f,
-                105f));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(105)));
     }
 
     @Test
@@ -26,8 +27,8 @@ class InsuranceProductTest {
         assertThrows(InsuranceProductIdNullException.class, () -> InsuranceProduct.create(null,
                 "teste",
                 InsuranceProductCategory.VIDA,
-                100f,
-                105f));
+                new BigDecimal(100),
+                new BigDecimal(105)));
     }
 
     @Test
@@ -36,8 +37,8 @@ class InsuranceProductTest {
         assertThrows(InsuranceProductNameNulException.class, () -> InsuranceProduct.create(id,
                 null,
                 InsuranceProductCategory.VIDA,
-                100f,
-                105f));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(105)));
     }
 
     @Test
@@ -46,8 +47,8 @@ class InsuranceProductTest {
         assertThrows(InsuranceProductNameNulException.class, () -> InsuranceProduct.create(id,
                 "",
                 InsuranceProductCategory.VIDA,
-                100f,
-                105f));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(105)));
     }
 
     @Test
@@ -56,8 +57,8 @@ class InsuranceProductTest {
         assertThrows(InsuranceProductCategoryNullException.class, () -> InsuranceProduct.create(id,
                 "teste",
                 null,
-                100f,
-                105f));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(105)));
     }
 
     @Test
@@ -67,7 +68,7 @@ class InsuranceProductTest {
                 "teste",
                 InsuranceProductCategory.VIDA,
                 null,
-                105f));
+                BigDecimal.valueOf(105)));
     }
 
     @Test
@@ -76,7 +77,7 @@ class InsuranceProductTest {
         assertThrows(InsuranceProductTariffedPriceNullException.class, () -> InsuranceProduct.create(id,
                 "teste",
                 InsuranceProductCategory.VIDA,
-                100f,
+                BigDecimal.valueOf(100),
                 null));
     }
 

@@ -2,6 +2,8 @@ package br.com.itau.desafioseguros.adapters.entrypoint.api.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
+
 public class AddInsuranceProductRequest {
 
     @JsonProperty("nome")
@@ -11,9 +13,9 @@ public class AddInsuranceProductRequest {
     private final String category;
 
     @JsonProperty("preco_base")
-    private final Float basePrice;
+    private final BigDecimal basePrice;
 
-    public AddInsuranceProductRequest(String name, String category, Float basePrice) {
+    public AddInsuranceProductRequest(String name, String category, BigDecimal basePrice) {
         this.name = name;
         this.category = category;
         this.basePrice = basePrice;
@@ -27,7 +29,7 @@ public class AddInsuranceProductRequest {
         return category;
     }
 
-    public Float getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 }

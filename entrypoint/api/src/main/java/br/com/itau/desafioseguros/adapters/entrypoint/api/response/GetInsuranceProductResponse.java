@@ -2,25 +2,26 @@ package br.com.itau.desafioseguros.adapters.entrypoint.api.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 public class GetInsuranceProductResponse {
 
-    private UUID id;
+    private final UUID id;
 
     @JsonProperty("nome")
-    private String name;
+    private final String name;
 
     @JsonProperty("categoria")
-    private String category;
+    private final String category;
 
     @JsonProperty("preco_base")
-    private Float basePrice;
+    private final BigDecimal basePrice;
 
     @JsonProperty("preco_tarifado")
-    private Float tariffedPrice;
+    private final BigDecimal tariffedPrice;
 
-    public GetInsuranceProductResponse(UUID id, String name, String category, Float basePrice, Float tariffedPrice) {
+    public GetInsuranceProductResponse(UUID id, String name, String category, BigDecimal basePrice, BigDecimal tariffedPrice) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -32,39 +33,19 @@ public class GetInsuranceProductResponse {
         return id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public Float getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 
-    public void setBasePrice(Float basePrice) {
-        this.basePrice = basePrice;
-    }
-
-    public Float getTariffedPrice() {
+    public BigDecimal getTariffedPrice() {
         return tariffedPrice;
-    }
-
-    public void setTariffedPrice(Float tariffedPrice) {
-        this.tariffedPrice = tariffedPrice;
     }
 }

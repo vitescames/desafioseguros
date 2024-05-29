@@ -17,6 +17,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -49,24 +50,24 @@ class AddInsuranceProductCommandHandlerTest {
         when(repository.add(insuranceProductArgumentCaptor.capture())).thenReturn(InsuranceProduct.create(new InsuranceProductId(uuid),
                 "teste",
                 InsuranceProductCategory.VIDA,
-                100f,
-                105f));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(105)));
 
         AddInsuranceProductCommandResponse response =
-                addInsuranceProductCommandHandler.handle(new AddInsuranceProductCommand("teste", "VIDA", 100f));
+                addInsuranceProductCommandHandler.handle(new AddInsuranceProductCommand("teste", "VIDA", BigDecimal.valueOf(100)));
 
         assertEquals("teste", response.getName());
         assertEquals("d16a4f7d-fa2c-4ea1-ac9c-c2fce8088541", response.getId().toString());
         assertEquals("VIDA", response.getCategory());
-        assertEquals(100f, response.getBasePrice());
-        assertEquals(105f, response.getTariffedPrice());
+        assertEquals(new BigDecimal("100"), response.getBasePrice());
+        assertEquals(new BigDecimal("105.00"), response.getTariffedPrice());
 
         InsuranceProduct insuranceProduct = insuranceProductArgumentCaptor.getValue();
         assertNotNull(insuranceProduct.getInsuranceProductId());
         assertEquals("teste", insuranceProduct.getName());
         assertEquals(InsuranceProductCategory.VIDA, insuranceProduct.getCategory());
-        assertEquals(100f, insuranceProduct.getBasePrice());
-        assertEquals(103.2f, insuranceProduct.getTariffedPrice());
+        assertEquals(new BigDecimal("100"), insuranceProduct.getBasePrice());
+        assertEquals(new BigDecimal("103.200"), insuranceProduct.getTariffedPrice());
     }
 
 }

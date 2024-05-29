@@ -2,14 +2,12 @@ package br.com.itau.desafioseguros.domain.strategy;
 
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 
-public class PatrimonialTariffedPriceCalculatorStrategy implements TariffedPriceCalculatorStrategy {
+import java.math.BigDecimal;
 
-    @Override
-    public float calculate(float basePrice) {
-        float iof = 0.05f;
-        float cofins = 0;
-        float pis = 0.03f;
-        return this.calculate(basePrice, iof, pis, cofins);
+public class PatrimonialTariffedPriceCalculatorStrategy extends TariffedPriceCalculatorStrategy {
+
+    public PatrimonialTariffedPriceCalculatorStrategy() {
+        super(BigDecimal.valueOf(0.05), BigDecimal.valueOf(0), BigDecimal.valueOf(0.03));
     }
 
     @Override

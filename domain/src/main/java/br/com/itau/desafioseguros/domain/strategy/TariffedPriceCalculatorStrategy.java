@@ -2,12 +2,24 @@ package br.com.itau.desafioseguros.domain.strategy;
 
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 
-public interface TariffedPriceCalculatorStrategy {
-    float calculate(float basePrice);
+import java.math.BigDecimal;
 
-    default float calculate(float basePrice, float iof, float pis, float cofins) {
-        return basePrice + (basePrice * iof) + (basePrice * pis) + (basePrice * cofins);
+public abstract class TariffedPriceCalculatorStrategy {
+
+    protected BigDecimal iof;
+    protected BigDecimal pis;
+    protected BigDecimal cofins;
+
+    protected TariffedPriceCalculatorStrategy(BigDecimal iof, BigDecimal pis, BigDecimal cofins) {
+        this.iof = iof;
+        this.pis = pis;
+        this.cofins = cofins;
     }
 
-    InsuranceProductCategory getInsuranceProductCategoryEnum();
+    public BigDecimal calculate(BigDecimal basePrice) {
+        return basePrice.add(basePrice.multiply(iof)).add(basePrice.multiply(pis)).add(basePrice.multiply(cofins));
+    }
+
+    protected abstract InsuranceProductCategory getInsuranceProductCategoryEnum();
+
 }

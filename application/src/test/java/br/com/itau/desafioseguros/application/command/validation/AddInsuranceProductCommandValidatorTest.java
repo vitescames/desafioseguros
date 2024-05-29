@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -15,7 +17,7 @@ class AddInsuranceProductCommandValidatorTest {
 
     @Test
     void validate_test() {
-        assertDoesNotThrow(() -> validator.validate(new AddInsuranceProductCommand("teste", "VIDA", 100f)));
+        assertDoesNotThrow(() -> validator.validate(new AddInsuranceProductCommand("teste", "VIDA", BigDecimal.valueOf(100))));
     }
 
     @Test

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,31 +30,31 @@ class TariffedPriceCalculatorStrategyFactoryTest {
     @Test
     void vidaStrategy_test() {
         VidaTariffedPriceCalculatorStrategy strategy = (VidaTariffedPriceCalculatorStrategy) this.strategyFactory.getStrategy(InsuranceProductCategory.VIDA);
-        assertEquals(103.2f, strategy.calculate(100f));
+        assertEquals(new BigDecimal("103.200"), strategy.calculate(BigDecimal.valueOf(100)));
     }
 
     @Test
     void viagemStrategy_test() {
         ViagemTariffedPriceCalculatorStrategy strategy = (ViagemTariffedPriceCalculatorStrategy) this.strategyFactory.getStrategy(InsuranceProductCategory.VIAGEM);
-        assertEquals(107.0f, strategy.calculate(100f));
+        assertEquals(new BigDecimal("107.00"), strategy.calculate(BigDecimal.valueOf(100)));
     }
 
     @Test
     void residStrategy_test() {
         ResidTariffedPriceCalculatorStrategy strategy = (ResidTariffedPriceCalculatorStrategy) this.strategyFactory.getStrategy(InsuranceProductCategory.RESIDENCIAL);
-        assertEquals(134.0f, strategy.calculate(100f));
+        assertEquals(new BigDecimal("134.00"), strategy.calculate(BigDecimal.valueOf(100)));
     }
 
     @Test
     void patrimStrategy_test() {
         PatrimonialTariffedPriceCalculatorStrategy strategy = (PatrimonialTariffedPriceCalculatorStrategy) this.strategyFactory.getStrategy(InsuranceProductCategory.PATRIMONIAL);
-        assertEquals(108.0f, strategy.calculate(100f));
+        assertEquals(new BigDecimal("108.00"), strategy.calculate(BigDecimal.valueOf(100)));
     }
 
     @Test
     void autoStrategy_test() {
         AutoTariffedPriceCalculatorStrategy strategy = (AutoTariffedPriceCalculatorStrategy) this.strategyFactory.getStrategy(InsuranceProductCategory.AUTO);
-        assertEquals(110.5f, strategy.calculate(100f));
+        assertEquals(new BigDecimal("110.500"), strategy.calculate(BigDecimal.valueOf(100)));
     }
 
     @Test

@@ -13,6 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,28 +38,28 @@ class AddInsuranceProductRepositoryImplTest {
         when(insuranceProductRepository.save(insuranceProductEntityArgumentCaptor.capture())).thenReturn(new InsuranceProductEntity(uuid,
                 "teste2",
                 "AUTO",
-                101f,
-                106f));
+                BigDecimal.valueOf(101),
+                BigDecimal.valueOf(106)));
 
         InsuranceProduct insuranceProduct = addInsuranceProductRepository.add(InsuranceProduct.create(new InsuranceProductId(uuid),
                 "teste",
                 InsuranceProductCategory.VIDA,
-                100f,
-                105f));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(105)));
 
         InsuranceProductEntity entityToBeSaved = insuranceProductEntityArgumentCaptor.getValue();
 
         assertEquals("teste", entityToBeSaved.getName());
         assertEquals("d16a4f7d-fa2c-4ea1-ac9c-c2fce8088541", entityToBeSaved.getId().toString());
         assertEquals("VIDA", entityToBeSaved.getCategory());
-        assertEquals(100f, entityToBeSaved.getBasePrice());
-        assertEquals(105f, entityToBeSaved.getTariffedPrice());
+        assertEquals(BigDecimal.valueOf(100), entityToBeSaved.getBasePrice());
+        assertEquals(BigDecimal.valueOf(105), entityToBeSaved.getTariffedPrice());
 
         assertEquals("teste2", insuranceProduct.getName());
         assertEquals("d16a4f7d-fa2c-4ea1-ac9c-c2fce8088541", insuranceProduct.getInsuranceProductId().getId().toString());
         assertEquals("AUTO", insuranceProduct.getCategory().toString());
-        assertEquals(101f, insuranceProduct.getBasePrice());
-        assertEquals(106f, insuranceProduct.getTariffedPrice());
+        assertEquals(BigDecimal.valueOf(101), insuranceProduct.getBasePrice());
+        assertEquals(BigDecimal.valueOf(106), insuranceProduct.getTariffedPrice());
     }
 
 }

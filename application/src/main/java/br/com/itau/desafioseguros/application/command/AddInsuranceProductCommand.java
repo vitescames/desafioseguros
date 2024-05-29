@@ -5,6 +5,8 @@ import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.math.BigDecimal;
+
 public class AddInsuranceProductCommand implements Command {
 
     @NotBlank(message = "O nome do produto de seguro não deve estar nulo/vazio")
@@ -15,9 +17,9 @@ public class AddInsuranceProductCommand implements Command {
     private final String category;
 
     @NotNull(message = "O preço base do produto de seguro não deve estar nulo/vazio")
-    private final Float basePrice;
+    private final BigDecimal basePrice;
 
-    public AddInsuranceProductCommand(String name, String category, Float basePrice) {
+    public AddInsuranceProductCommand(String name, String category, BigDecimal basePrice) {
         this.name = name;
         this.category = category;
         this.basePrice = basePrice;
@@ -31,7 +33,7 @@ public class AddInsuranceProductCommand implements Command {
         return category;
     }
 
-    public float getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 }

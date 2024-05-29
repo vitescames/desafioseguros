@@ -2,14 +2,12 @@ package br.com.itau.desafioseguros.domain.strategy;
 
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 
-public class VidaTariffedPriceCalculatorStrategy implements TariffedPriceCalculatorStrategy {
+import java.math.BigDecimal;
 
-    @Override
-    public float calculate(float basePrice) {
-        float iof = 0.01f;
-        float pis = 0.022f;
-        float cofins = 0;
-        return this.calculate(basePrice, iof, pis, cofins);
+public class VidaTariffedPriceCalculatorStrategy extends TariffedPriceCalculatorStrategy {
+
+    public VidaTariffedPriceCalculatorStrategy() {
+        super(BigDecimal.valueOf(0.01), BigDecimal.valueOf(0.022), BigDecimal.valueOf(0));
     }
 
     @Override

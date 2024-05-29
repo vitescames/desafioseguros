@@ -5,9 +5,8 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
 
 @Aspect
 @Component
@@ -15,13 +14,32 @@ public class LoggingAspect {
 
     Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Around(value = "@annotation(br.com.itau.desafioseguros.domain.shared.annotations.LoggingMethod)")
-    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        Object[] args = joinPoint.getArgs();
+    @Around("execution(* br.com.itau.desafioseguros.adapters.entrypoint..*.*(..))")
+    public Object logAroundEntrypoints(ProceedingJoinPoint joinPoint) throws Throwable {
+        String className = joinPoint.getSignature().getDeclaringTypeName();
         String methodName = joinPoint.getSignature().getName();
-        logger.info(">> {}() - {}", methodName, Arrays.toString(args));
+
+        MDC.put("context", className.substring(className.lastIndexOf('.') + 1) + "." + methodName);
+
+        logger.info(">> {}() - {}", methodName, joinPoint.getArgs());
+
         Object result = joinPoint.proceed();
+
         logger.info("<< {}() - {}", methodName, result);
+
+        return result;
+    }
+
+    @Around("execution(* br.com.itau.desafioseguros.application.command.handlers..*.*(..))")
+    public Object logAroundCommandHandlers(ProceedingJoinPoint joinPoint) throws Throwable {
+        String methodName = joinPoint.getSignature().getName();
+
+        logger.info(">> {}()", methodName);
+
+        Object result = joinPoint.proceed();
+
+        logger.info("<< {}() - {}", methodName, result);
+
         return result;
     }
 

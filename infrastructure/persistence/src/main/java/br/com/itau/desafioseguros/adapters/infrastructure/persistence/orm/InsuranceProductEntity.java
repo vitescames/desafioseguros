@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -19,15 +20,15 @@ public class InsuranceProductEntity {
     private String category;
 
     @Column(name = "base_price")
-    private Float basePrice;
+    private BigDecimal basePrice;
 
     @Column(name = "tariffed_price")
-    private Float tariffedPrice;
+    private BigDecimal tariffedPrice;
 
     public InsuranceProductEntity() {
     }
 
-    public InsuranceProductEntity(UUID id, String name, String category, Float basePrice, Float tariffedPrice) {
+    public InsuranceProductEntity(UUID id, String name, String category, BigDecimal basePrice, BigDecimal tariffedPrice) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -47,11 +48,11 @@ public class InsuranceProductEntity {
         return category;
     }
 
-    public Float getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 
-    public Float getTariffedPrice() {
+    public BigDecimal getTariffedPrice() {
         return tariffedPrice;
     }
 }

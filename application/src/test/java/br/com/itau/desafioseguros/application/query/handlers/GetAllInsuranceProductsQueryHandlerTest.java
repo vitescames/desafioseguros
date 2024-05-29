@@ -12,6 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,16 +34,16 @@ class GetAllInsuranceProductsQueryHandlerTest {
         when(getAllInsuranceProductRepository.get()).thenReturn(List.of(InsuranceProduct.create(new InsuranceProductId(uuid),
                 "teste",
                 InsuranceProductCategory.VIDA,
-                100f,
-                105f)));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(105))));
 
         List<GetInsuranceProductQueryResponse> response = getAllInsuranceProductQueryHandler.handle(new GetAllInsuranceProductsQuery());
 
         assertEquals("teste", response.get(0).getName());
         assertEquals("d16a4f7d-fa2c-4ea1-ac9c-c2fce8088541", response.get(0).getId().toString());
         assertEquals("VIDA", response.get(0).getCategory());
-        assertEquals(100f, response.get(0).getBasePrice());
-        assertEquals(105f, response.get(0).getTariffedPrice());
+        assertEquals(BigDecimal.valueOf(100), response.get(0).getBasePrice());
+        assertEquals(BigDecimal.valueOf(105), response.get(0).getTariffedPrice());
     }
 
 }

@@ -5,12 +5,13 @@ import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProd
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
-import br.com.itau.desafioseguros.domain.shared.annotations.LoggingMethod;
 import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategy;
 import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategyFactory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.UUID;
 
 public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> {
@@ -27,7 +28,6 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
         this.repository = repository;
     }
 
-    @LoggingMethod
     @Override
     public AddInsuranceProductCommandResponse handle(AddInsuranceProductCommand command) {
         validator.validate(command);
@@ -35,7 +35,7 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
         InsuranceProductCategory categoryEnum = InsuranceProductCategory.valueOf(command.getCategory());
         TariffedPriceCalculatorStrategy strategy = strategyFactory.getStrategy(categoryEnum);
 
-        float tariffedPrice = strategy.calculate(command.getBasePrice());
+        BigDecimal tariffedPrice = strategy.calculate(command.getBasePrice());
 
         InsuranceProduct insuranceProduct = InsuranceProduct.create(new InsuranceProductId(UUID.randomUUID()),
                 command.getName(),
@@ -49,6 +49,6 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
                 insuranceProductAdded.getName(),
                 insuranceProductAdded.getCategory().toString(),
                 insuranceProductAdded.getBasePrice(),
-                insuranceProductAdded.getTariffedPrice());
+                insuranceProductAdded.getTariffedPrice().setScale(2, RoundingMode.CEILING));
     }
 }

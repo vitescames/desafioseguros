@@ -18,6 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -59,8 +60,8 @@ class InsuranceProductControllerTest {
         when(commandHandler.handle(captorCommand.capture())).thenReturn(new AddInsuranceProductCommandResponse(uuid,
                 "teste",
                 "teste",
-                100f,
-                100f));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(100)));
 
         this.mockMvc.perform(post("/insurance/products")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -86,7 +87,7 @@ class InsuranceProductControllerTest {
 
         AddInsuranceProductCommand command = captorCommand.getValue();
 
-        assertEquals(100f, command.getBasePrice());
+        assertEquals(new BigDecimal("100.00"), command.getBasePrice());
         assertEquals("VIDA", command.getCategory());
         assertEquals("Seguro de Vida Individual", command.getName());
     }
@@ -97,8 +98,8 @@ class InsuranceProductControllerTest {
         when(queryHandler.handle(any(GetAllInsuranceProductsQuery.class))).thenReturn(List.of(new GetInsuranceProductQueryResponse(uuid,
                 "teste",
                 "teste",
-                100f,
-                100f)));
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(100))));
 
         this.mockMvc.perform(get("/insurance/products"))
                 .andDo(print())

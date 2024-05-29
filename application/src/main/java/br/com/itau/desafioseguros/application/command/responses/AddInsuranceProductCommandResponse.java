@@ -1,5 +1,6 @@
 package br.com.itau.desafioseguros.application.command.responses;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 public class AddInsuranceProductCommandResponse implements CommandResponse {
@@ -10,11 +11,11 @@ public class AddInsuranceProductCommandResponse implements CommandResponse {
 
     private final String category;
 
-    private final Float basePrice;
+    private final BigDecimal basePrice;
 
-    private final Float tariffedPrice;
+    private final BigDecimal tariffedPrice;
 
-    public AddInsuranceProductCommandResponse(UUID id, String name, String category, Float basePrice, Float tariffedPrice) {
+    public AddInsuranceProductCommandResponse(UUID id, String name, String category, BigDecimal basePrice, BigDecimal tariffedPrice) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -34,11 +35,11 @@ public class AddInsuranceProductCommandResponse implements CommandResponse {
         return category;
     }
 
-    public Float getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 
-    public Float getTariffedPrice() {
+    public BigDecimal getTariffedPrice() {
         return tariffedPrice;
     }
 }
