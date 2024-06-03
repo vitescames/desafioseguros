@@ -1,4 +1,4 @@
-package br.com.itau.desafioseguros.domain.strategy;
+package br.com.itau.desafioseguros.domain.services.strategy;
 
 import br.com.itau.desafioseguros.domain.exceptions.TariffedPriceCalculatorStrategyNotFoundException;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;

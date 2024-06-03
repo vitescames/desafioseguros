@@ -1,10 +1,13 @@
 package br.com.itau.desafioseguros.domain.entities;
 
+import br.com.itau.desafioseguros.domain.event.DomainEvent;
 import br.com.itau.desafioseguros.domain.exceptions.*;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InsuranceProduct {
 
@@ -17,6 +20,8 @@ public class InsuranceProduct {
     private final BigDecimal basePrice;
 
     private final BigDecimal tariffedPrice;
+
+    private final List<DomainEvent> domainEvents = new ArrayList<>();
 
     private InsuranceProduct(InsuranceProductId insuranceProductId,
                              String name,
@@ -75,5 +80,13 @@ public class InsuranceProduct {
 
     public BigDecimal getTariffedPrice() {
         return tariffedPrice;
+    }
+
+    public List<DomainEvent> getDomainEvents() {
+        return domainEvents;
+    }
+
+    public void registerEvent(DomainEvent domainEvent) {
+        domainEvents.add(domainEvent);
     }
 }

@@ -1,12 +1,14 @@
-package br.com.itau.desafioseguros.application.command.handlers;
+package br.com.itau.desafioseguros.application.command.handler;
 
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
+import br.com.itau.desafioseguros.application.event.publisher.EventBus;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
+import br.com.itau.desafioseguros.domain.event.InsuranceProductCreated;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
-import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategy;
-import br.com.itau.desafioseguros.domain.strategy.TariffedPriceCalculatorStrategyFactory;
+import br.com.itau.desafioseguros.domain.services.strategy.TariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.domain.services.strategy.TariffedPriceCalculatorStrategyFactory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 
@@ -19,13 +21,15 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
     private final TariffedPriceCalculatorStrategyFactory strategyFactory;
     private final CommandValidator validator;
     private final AddInsuranceProductRepository repository;
+    private final EventBus eventBus;
 
     public AddInsuranceProductCommandHandler(TariffedPriceCalculatorStrategyFactory strategyFactory,
                                              CommandValidator validator,
-                                             AddInsuranceProductRepository repository) {
+                                             AddInsuranceProductRepository repository, EventBus eventBus) {
         this.strategyFactory = strategyFactory;
         this.validator = validator;
         this.repository = repository;
+        this.eventBus = eventBus;
     }
 
     @Override
@@ -44,6 +48,10 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
                 tariffedPrice);
 
         InsuranceProduct insuranceProductAdded = repository.add(insuranceProduct);
+
+        insuranceProductAdded.registerEvent(new InsuranceProductCreated(insuranceProduct.getInsuranceProductId()));
+
+        insuranceProductAdded.getDomainEvents().forEach(eventBus::publish);
 
         return new AddInsuranceProductCommandResponse(insuranceProductAdded.getInsuranceProductId().getId(),
                 insuranceProductAdded.getName(),

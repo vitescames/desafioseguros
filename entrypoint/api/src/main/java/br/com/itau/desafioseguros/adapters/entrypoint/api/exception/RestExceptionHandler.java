@@ -1,12 +1,15 @@
 package br.com.itau.desafioseguros.adapters.entrypoint.api.exception;
 
 import br.com.itau.desafioseguros.application.exceptions.CommandValidationException;
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import jakarta.validation.ConstraintViolation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.List;
 
 @RestControllerAdvice
 public class RestExceptionHandler {
@@ -20,8 +23,18 @@ public class RestExceptionHandler {
 
     @ExceptionHandler({HttpMessageNotReadableException.class})
     public ResponseEntity<RestErrorResponse> handleHttpMessageNotReadableExceptionExeption(HttpMessageNotReadableException ex) {
-        return new ResponseEntity<>(new RestErrorResponse("O formato ou a sintaxe da requisição está incorreta, " +
-                "verifique e tente novamente", null),
+        String mensagem = "O formato ou a sintaxe da requisição está incorreta, " +
+                "verifique e tente novamente";
+
+        if (ex.getCause() instanceof InvalidFormatException invalidFormatException) {
+            String field = invalidFormatException.getPath().get(0).getFieldName();
+            String targetType = invalidFormatException.getTargetType().getSimpleName();
+
+            return new ResponseEntity<>(new RestErrorResponse(mensagem,
+                    List.of(String.format("O campo %s deve ser do tipo %s", field, targetType))), HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(new RestErrorResponse(mensagem, null),
                 HttpStatus.BAD_REQUEST);
     }
 

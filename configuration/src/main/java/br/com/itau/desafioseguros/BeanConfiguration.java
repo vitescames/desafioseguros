@@ -1,17 +1,21 @@
 package br.com.itau.desafioseguros;
 
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
-import br.com.itau.desafioseguros.application.command.handlers.AddInsuranceProductCommandHandler;
-import br.com.itau.desafioseguros.application.command.handlers.CommandHandler;
+import br.com.itau.desafioseguros.application.command.handler.AddInsuranceProductCommandHandler;
+import br.com.itau.desafioseguros.application.command.handler.CommandHandler;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
+import br.com.itau.desafioseguros.application.event.handler.InsuranceProductCreatedEventHandler;
+import br.com.itau.desafioseguros.application.event.publisher.EventBus;
+import br.com.itau.desafioseguros.application.event.publisher.EventBusImpl;
 import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery;
 import br.com.itau.desafioseguros.application.query.handlers.GetAllInsuranceProductQueryHandler;
 import br.com.itau.desafioseguros.application.query.handlers.QueryHandler;
 import br.com.itau.desafioseguros.application.query.responses.GetInsuranceProductQueryResponse;
+import br.com.itau.desafioseguros.domain.event.InsuranceProductCreated;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
 import br.com.itau.desafioseguros.domain.repositories.GetAllInsuranceProductRepository;
-import br.com.itau.desafioseguros.domain.strategy.*;
+import br.com.itau.desafioseguros.domain.services.strategy.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -58,12 +62,20 @@ public class BeanConfiguration {
     @Bean
     public CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> addInsuranceProductCommandHandler(TariffedPriceCalculatorStrategyFactory strategyFactory,
                                                                                                                             CommandValidator validator,
-                                                                                                                            AddInsuranceProductRepository repository) {
-        return new AddInsuranceProductCommandHandler(strategyFactory, validator, repository);
+                                                                                                                            AddInsuranceProductRepository repository,
+                                                                                                                            EventBus eventBus) {
+        return new AddInsuranceProductCommandHandler(strategyFactory, validator, repository, eventBus);
     }
 
     @Bean
     public QueryHandler<GetAllInsuranceProductsQuery, GetInsuranceProductQueryResponse> getAllInsuranceProductQueryHandler(GetAllInsuranceProductRepository getAllInsuranceProductRepository) {
         return new GetAllInsuranceProductQueryHandler(getAllInsuranceProductRepository);
+    }
+
+    @Bean
+    public EventBus eventBus() {
+        EventBusImpl eventBusImpl = new EventBusImpl();
+        eventBusImpl.registerHandler(InsuranceProductCreated.class, new InsuranceProductCreatedEventHandler());
+        return eventBusImpl;
     }
 }

@@ -1,4 +1,4 @@
-package br.com.itau.desafioseguros.application.command.handlers;
+package br.com.itau.desafioseguros.application.command.handler;
 
 import br.com.itau.desafioseguros.application.command.Command;
 import br.com.itau.desafioseguros.application.command.responses.CommandResponse;
