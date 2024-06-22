@@ -19,6 +19,12 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
     show-sql: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: [ "prometheus" ]
+
 logging:
   level:
     ROOT: INFO

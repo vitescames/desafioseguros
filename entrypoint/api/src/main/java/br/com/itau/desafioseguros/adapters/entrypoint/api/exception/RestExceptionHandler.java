@@ -39,7 +39,7 @@ public class RestExceptionHandler {
     }
 
     @ExceptionHandler({Exception.class})
-    public ResponseEntity<RestErrorResponse> handleUnknownExeption(Exception ex) {
+    public ResponseEntity<RestErrorResponse> handleUnknownExeption() {
         return new ResponseEntity<>(new RestErrorResponse("Houve um erro desconhecido", null),
                 HttpStatus.INTERNAL_SERVER_ERROR);
     }
