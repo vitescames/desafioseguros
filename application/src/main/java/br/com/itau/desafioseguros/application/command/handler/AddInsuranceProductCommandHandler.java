@@ -5,7 +5,7 @@ import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProd
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
 import br.com.itau.desafioseguros.application.event.publisher.EventBus;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
-import br.com.itau.desafioseguros.domain.event.InsuranceProductCreated;
+import br.com.itau.desafioseguros.domain.events.InsuranceProductCreated;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
 import br.com.itau.desafioseguros.domain.services.strategy.TariffedPriceCalculatorStrategy;
 import br.com.itau.desafioseguros.domain.services.strategy.TariffedPriceCalculatorStrategyFactory;

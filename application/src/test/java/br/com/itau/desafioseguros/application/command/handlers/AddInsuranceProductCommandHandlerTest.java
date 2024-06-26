@@ -30,6 +30,9 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class AddInsuranceProductCommandHandlerTest {
 
+    @InjectMocks
+    private AddInsuranceProductCommandHandler addInsuranceProductCommandHandler;
+
     @Mock
     private TariffedPriceCalculatorStrategyFactory strategyFactory;
 
@@ -41,9 +44,6 @@ class AddInsuranceProductCommandHandlerTest {
 
     @Mock
     private EventBus eventBus;
-
-    @InjectMocks
-    private AddInsuranceProductCommandHandler addInsuranceProductCommandHandler;
 
     @Captor
     private ArgumentCaptor<InsuranceProduct> insuranceProductArgumentCaptor;

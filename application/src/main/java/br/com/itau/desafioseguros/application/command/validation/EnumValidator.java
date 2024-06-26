@@ -10,7 +10,6 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = EnumValidatorConstraint.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@NotNull
 public @interface EnumValidator {
 
     Class<? extends Enum<?>> enumClass();

@@ -12,10 +12,16 @@ import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery
 import br.com.itau.desafioseguros.application.query.handlers.GetAllInsuranceProductQueryHandler;
 import br.com.itau.desafioseguros.application.query.handlers.QueryHandler;
 import br.com.itau.desafioseguros.application.query.responses.GetInsuranceProductQueryResponse;
-import br.com.itau.desafioseguros.domain.event.InsuranceProductCreated;
+import br.com.itau.desafioseguros.domain.events.InsuranceProductCreated;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
 import br.com.itau.desafioseguros.domain.repositories.GetAllInsuranceProductRepository;
-import br.com.itau.desafioseguros.domain.services.strategy.*;
+import br.com.itau.desafioseguros.domain.services.strategy.AutoTariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.domain.services.strategy.PatrimonialTariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.domain.services.strategy.ResidTariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.domain.services.strategy.TariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.domain.services.strategy.TariffedPriceCalculatorStrategyFactory;
+import br.com.itau.desafioseguros.domain.services.strategy.ViagemTariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.domain.services.strategy.VidaTariffedPriceCalculatorStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -74,7 +80,7 @@ public class BeanConfiguration {
 
     @Bean
     public EventBus eventBus() {
-        EventBusImpl eventBusImpl = new EventBusImpl();
+        EventBus eventBusImpl = new EventBusImpl();
         eventBusImpl.registerHandler(InsuranceProductCreated.class, new InsuranceProductCreatedEventHandler());
         return eventBusImpl;
     }
