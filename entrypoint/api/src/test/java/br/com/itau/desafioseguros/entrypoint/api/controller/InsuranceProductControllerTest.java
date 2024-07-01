@@ -1,7 +1,7 @@
 package br.com.itau.desafioseguros.entrypoint.api.controller;
 
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
-import br.com.itau.desafioseguros.application.command.handler.CommandHandler;
+import br.com.itau.desafioseguros.application.command.handlers.CommandHandler;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery;
 import br.com.itau.desafioseguros.application.query.handlers.QueryHandler;

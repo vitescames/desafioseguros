@@ -1,16 +1,14 @@
 package br.com.itau.desafioseguros.application.command.handlers;
 
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
-import br.com.itau.desafioseguros.application.command.handler.AddInsuranceProductCommandHandler;
-import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
-import br.com.itau.desafioseguros.application.event.publisher.EventBus;
-import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
-import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
-import br.com.itau.desafioseguros.domain.services.strategy.TariffedPriceCalculatorStrategyFactory;
-import br.com.itau.desafioseguros.domain.services.strategy.VidaTariffedPriceCalculatorStrategy;
+import br.com.itau.desafioseguros.application.event.EventBus;
+import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
+import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
+import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
+import br.com.itau.desafioseguros.domain.services.TariffedPriceCalculatorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -34,7 +32,7 @@ class AddInsuranceProductCommandHandlerTest {
     private AddInsuranceProductCommandHandler addInsuranceProductCommandHandler;
 
     @Mock
-    private TariffedPriceCalculatorStrategyFactory strategyFactory;
+    private TariffedPriceCalculatorService strategyFactory;
 
     @Mock
     private CommandValidator validator;
@@ -51,7 +49,7 @@ class AddInsuranceProductCommandHandlerTest {
     @Test
     void handle_test() {
         UUID uuid = UUID.fromString("d16a4f7d-fa2c-4ea1-ac9c-c2fce8088541");
-        when(strategyFactory.getStrategy(any(InsuranceProductCategory.class))).thenReturn(new VidaTariffedPriceCalculatorStrategy());
+        when(strategyFactory.calculate(any(), any(InsuranceProductCategory.class))).thenReturn(new BigDecimal("103.200"));
         when(repository.add(insuranceProductArgumentCaptor.capture())).thenReturn(InsuranceProduct.create(new InsuranceProductId(uuid),
                 "teste",
                 InsuranceProductCategory.VIDA,

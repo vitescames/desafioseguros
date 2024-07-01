@@ -1,21 +1,25 @@
 package br.com.itau.desafioseguros.domain.entities;
 
-import br.com.itau.desafioseguros.domain.exceptions.*;
-import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
+import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductBasePriceNullException;
+import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductCategoryNullException;
+import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductIdNullException;
+import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductNameNulException;
+import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductTariffedPriceNullException;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class InsuranceProductTest {
 
     @Test
     void create_test() {
-        assertDoesNotThrow(() -> InsuranceProduct.create(new InsuranceProductId(UUID.randomUUID()),
+        Assertions.assertDoesNotThrow(() -> InsuranceProduct.create(new InsuranceProductId(UUID.randomUUID()),
                 "teste",
                 InsuranceProductCategory.VIDA,
                 BigDecimal.valueOf(100),

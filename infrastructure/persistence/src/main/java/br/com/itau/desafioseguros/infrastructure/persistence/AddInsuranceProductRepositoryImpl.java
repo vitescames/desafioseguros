@@ -1,11 +1,11 @@
 package br.com.itau.desafioseguros.infrastructure.persistence;
 
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 import br.com.itau.desafioseguros.infrastructure.persistence.orm.InsuranceProductEntity;
 import br.com.itau.desafioseguros.infrastructure.persistence.repositories.InsuranceProductRepository;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
 import br.com.itau.desafioseguros.domain.repositories.AddInsuranceProductRepository;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
-import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
 import org.springframework.stereotype.Component;
 
 @Component

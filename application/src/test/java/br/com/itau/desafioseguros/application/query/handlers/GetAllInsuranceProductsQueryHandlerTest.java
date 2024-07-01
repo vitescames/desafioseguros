@@ -1,11 +1,11 @@
 package br.com.itau.desafioseguros.application.query.handlers;
 
-import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery;
 import br.com.itau.desafioseguros.application.query.responses.GetInsuranceProductQueryResponse;
-import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
+import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery;
 import br.com.itau.desafioseguros.domain.repositories.GetAllInsuranceProductRepository;
-import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
+import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
+import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
