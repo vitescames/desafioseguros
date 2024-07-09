@@ -5,11 +5,11 @@ import br.com.itau.desafioseguros.domain.events.DomainEvent;
 
 import java.util.Set;
 
-public class EventBus {
+public class EventPublisher {
 
     private final Set<DomainEventHandler> handlers;
 
-    public EventBus(Set<DomainEventHandler> handlers) {
+    public EventPublisher(Set<DomainEventHandler> handlers) {
         this.handlers = handlers;
     }
 

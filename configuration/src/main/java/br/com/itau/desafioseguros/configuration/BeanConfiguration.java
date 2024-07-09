@@ -7,7 +7,7 @@ import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProd
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
 import br.com.itau.desafioseguros.application.event.handlers.DomainEventHandler;
 import br.com.itau.desafioseguros.application.event.handlers.InsuranceProductCreatedEventHandler;
-import br.com.itau.desafioseguros.application.event.EventBus;
+import br.com.itau.desafioseguros.application.event.EventPublisher;
 import br.com.itau.desafioseguros.application.query.GetAllInsuranceProductsQuery;
 import br.com.itau.desafioseguros.application.query.handlers.GetAllInsuranceProductQueryHandler;
 import br.com.itau.desafioseguros.application.query.handlers.QueryHandler;
@@ -72,8 +72,8 @@ public class BeanConfiguration {
     public CommandHandler<AddInsuranceProductCommand, AddInsuranceProductCommandResponse> addInsuranceProductCommandHandler(TariffedPriceCalculatorService strategyFactory,
                                                                                                                             CommandValidator validator,
                                                                                                                             AddInsuranceProductRepository repository,
-                                                                                                                            EventBus eventBus) {
-        return new AddInsuranceProductCommandHandler(strategyFactory, validator, repository, eventBus);
+                                                                                                                            EventPublisher eventPublisher) {
+        return new AddInsuranceProductCommandHandler(strategyFactory, validator, repository, eventPublisher);
     }
 
     @Bean
@@ -87,7 +87,7 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public EventBus eventBus(Set<DomainEventHandler> handlers) {
-        return new EventBus(handlers);
+    public EventPublisher eventBus(Set<DomainEventHandler> handlers) {
+        return new EventPublisher(handlers);
     }
 }

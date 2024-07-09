@@ -20,9 +20,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class EventBusTest {
+class EventPublisherTest {
 
-    private EventBus eventBus;
+    private EventPublisher eventPublisher;
 
     @Test
     void publish_test() {
@@ -32,9 +32,9 @@ class EventBusTest {
         when(insuranceProductCreatedEventHandler1.shouldHandle(any())).thenReturn(true);
         when(insuranceProductCreatedEventHandler2.shouldHandle(any())).thenReturn(false);
 
-        eventBus = new EventBus(Set.of(insuranceProductCreatedEventHandler1, insuranceProductCreatedEventHandler2));
+        eventPublisher = new EventPublisher(Set.of(insuranceProductCreatedEventHandler1, insuranceProductCreatedEventHandler2));
 
-        eventBus.publish(new InsuranceProductCreated(new InsuranceProductId(UUID.randomUUID())));
+        eventPublisher.publish(new InsuranceProductCreated(new InsuranceProductId(UUID.randomUUID())));
 
         verify(insuranceProductCreatedEventHandler1, atMostOnce()).handle(any());
         verify(insuranceProductCreatedEventHandler2, never()).handle(any());
@@ -42,8 +42,8 @@ class EventBusTest {
 
     @Test
     void publish_handlersListIsNull_test() {
-        eventBus = new EventBus(null);
-        assertDoesNotThrow(() -> eventBus.publish(new InsuranceProductCreated(new InsuranceProductId(UUID.randomUUID()))));
+        eventPublisher = new EventPublisher(null);
+        assertDoesNotThrow(() -> eventPublisher.publish(new InsuranceProductCreated(new InsuranceProductId(UUID.randomUUID()))));
     }
 
 }

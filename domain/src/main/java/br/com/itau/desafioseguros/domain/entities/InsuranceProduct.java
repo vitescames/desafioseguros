@@ -1,6 +1,7 @@
 package br.com.itau.desafioseguros.domain.entities;
 
 import br.com.itau.desafioseguros.domain.events.DomainEvent;
+import br.com.itau.desafioseguros.domain.events.InsuranceProductCreated;
 import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductBasePriceNullException;
 import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductCategoryNullException;
 import br.com.itau.desafioseguros.domain.exceptions.InsuranceProductIdNullException;
@@ -59,11 +60,15 @@ public class InsuranceProduct {
         if (tariffedPrice == null)
             throw new InsuranceProductTariffedPriceNullException();
 
-        return new InsuranceProduct(insuranceProductId,
+        InsuranceProduct insuranceProduct = new InsuranceProduct(insuranceProductId,
                 name,
                 category,
                 basePrice,
                 tariffedPrice);
+
+        insuranceProduct.registerEvent(new InsuranceProductCreated(insuranceProduct.getInsuranceProductId()));
+
+        return insuranceProduct;
     }
 
     public InsuranceProductId getInsuranceProductId() {

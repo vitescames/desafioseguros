@@ -3,9 +3,8 @@ package br.com.itau.desafioseguros.application.command.handlers;
 import br.com.itau.desafioseguros.application.command.AddInsuranceProductCommand;
 import br.com.itau.desafioseguros.application.command.responses.AddInsuranceProductCommandResponse;
 import br.com.itau.desafioseguros.application.command.validation.CommandValidator;
-import br.com.itau.desafioseguros.application.event.EventBus;
+import br.com.itau.desafioseguros.application.event.EventPublisher;
 import br.com.itau.desafioseguros.domain.entities.InsuranceProduct;
-import br.com.itau.desafioseguros.domain.events.InsuranceProductCreated;
 import br.com.itau.desafioseguros.domain.services.TariffedPriceCalculatorService;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductCategory;
 import br.com.itau.desafioseguros.domain.valueobjects.InsuranceProductId;
@@ -20,15 +19,15 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
     private final TariffedPriceCalculatorService strategyFactory;
     private final CommandValidator validator;
     private final AddInsuranceProductRepository repository;
-    private final EventBus eventBus;
+    private final EventPublisher eventPublisher;
 
     public AddInsuranceProductCommandHandler(TariffedPriceCalculatorService strategyFactory,
                                              CommandValidator validator,
-                                             AddInsuranceProductRepository repository, EventBus eventBus) {
+                                             AddInsuranceProductRepository repository, EventPublisher eventPublisher) {
         this.strategyFactory = strategyFactory;
         this.validator = validator;
         this.repository = repository;
-        this.eventBus = eventBus;
+        this.eventPublisher = eventPublisher;
     }
 
     @Override
@@ -45,16 +44,14 @@ public class AddInsuranceProductCommandHandler implements CommandHandler<AddInsu
                 command.getBasePrice(),
                 tariffedPrice);
 
-        InsuranceProduct insuranceProductAdded = repository.add(insuranceProduct);
+        repository.add(insuranceProduct);
 
-        insuranceProductAdded.registerEvent(new InsuranceProductCreated(insuranceProduct.getInsuranceProductId()));
+        insuranceProduct.getDomainEvents().forEach(eventPublisher::publish);
 
-        insuranceProductAdded.getDomainEvents().forEach(eventBus::publish);
-
-        return new AddInsuranceProductCommandResponse(insuranceProductAdded.getInsuranceProductId().getId(),
-                insuranceProductAdded.getName(),
-                insuranceProductAdded.getCategory().toString(),
-                insuranceProductAdded.getBasePrice(),
-                insuranceProductAdded.getTariffedPrice().setScale(2, RoundingMode.CEILING));
+        return new AddInsuranceProductCommandResponse(insuranceProduct.getInsuranceProductId().getId(),
+                insuranceProduct.getName(),
+                insuranceProduct.getCategory().toString(),
+                insuranceProduct.getBasePrice(),
+                insuranceProduct.getTariffedPrice().setScale(2, RoundingMode.CEILING));
     }
 }
